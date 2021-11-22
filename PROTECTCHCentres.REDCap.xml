@@ -1,0 +1,1362 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="PROTECT-CH Centres" AsOfDateTime="2021-11-11T10:59:32" CreationDateTime="2021-11-11T10:59:32" SourceSystem="REDCap" SourceSystemVersion="10.6.11">
+<Study OID="Project.PROTECTCHCentres">
+<GlobalVariables>
+	<StudyName>PROTECT-CH Centres</StudyName>
+	<StudyDescription>This file contains the metadata, events, and data for REDCap project "PROTECT-CH Centres".</StudyDescription>
+	<ProtocolName>PROTECT-CH Centres</ProtocolName>
+	<redcap:RecordAutonumberingEnabled>1</redcap:RecordAutonumberingEnabled>
+	<redcap:CustomRecordLabel></redcap:CustomRecordLabel>
+	<redcap:SecondaryUniqueField></redcap:SecondaryUniqueField>
+	<redcap:SchedulingEnabled>0</redcap:SchedulingEnabled>
+	<redcap:SurveysEnabled>1</redcap:SurveysEnabled>
+	<redcap:SurveyInvitationEmailField></redcap:SurveyInvitationEmailField>
+	<redcap:Purpose>4</redcap:Purpose>
+	<redcap:PurposeOther></redcap:PurposeOther>
+	<redcap:ProjectNotes>Site records and randomisation for the PROTECT-CH study.</redcap:ProjectNotes>
+	<redcap:MissingDataCodes></redcap:MissingDataCodes>
+	<redcap:RepeatingInstrumentsAndEvents>
+		<redcap:RepeatingInstruments>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="event_1_arm_1" redcap:RepeatInstrument="gp_details" redcap:CustomLabel="[gp_practice]"/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="event_1_arm_1" redcap:RepeatInstrument="delegation_log_add" redcap:CustomLabel="[dl_name] [dl_role] [dl_datesigned]"/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="event_1_arm_1" redcap:RepeatInstrument="delegation_log_remove" redcap:CustomLabel="[dlr_name] [dlr_date]"/>
+		</redcap:RepeatingInstruments>
+	</redcap:RepeatingInstrumentsAndEvents>
+	<redcap:DataQualityRulesGroup>
+		<redcap:DataQualityRules rule_order="1" rule_name="Data collection is stopped before trial treatment is stopped" rule_logic="[tstatus_stop_treat_date] &gt; [tstatus_stop_data_date]" real_time_execute="1"/>
+		<redcap:DataQualityRules rule_order="2" rule_name="Date trial treatment stopped is before randomisation date" rule_logic="[tstatus_stop_treat_date] &lt; [rando_date]" real_time_execute="1"/>
+		<redcap:DataQualityRules rule_order="3" rule_name="Date data collection stopped is before randomisation date" rule_logic="[tstatus_stop_data_date] &lt; [rando_date]" real_time_execute="1"/>
+		<redcap:DataQualityRules rule_order="4" rule_name="Number of residents living at the care home at day 60 exceeds the care home capacity" rule_logic="[d60_num_residents] &gt; [centre_capacity]" real_time_execute="1"/>
+		<redcap:DataQualityRules rule_order="5" rule_name="Number of residents living at the care home at time of outbreak exceeds the care home capacity" rule_logic="[outbreak_numres] &gt; [centre_capacity]" real_time_execute="1"/>
+		<redcap:DataQualityRules rule_order="6" rule_name="Number of residents living at the care home exceeds the care home capacity" rule_logic="[centre_occupancy] &gt; [centre_capacity]" real_time_execute="1"/>
+	</redcap:DataQualityRulesGroup>
+	<redcap:SurveysGroup>
+		<redcap:Surveys form_name="outbreak" title="Outbreak" instructions="&lt;p&gt;&lt;strong&gt;Please complete the survey below.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Thank you!&lt;/p&gt;" acknowledgement="&lt;p&gt;&lt;strong&gt;Thank you.&lt;/strong&gt;&lt;/p&gt;" question_by_section="0" display_page_number="0" question_auto_numbering="0" survey_enabled="1" save_and_return="0" save_and_return_code_bypass="0" logo="" hide_title="0" view_results="0" min_responses_view_results="10" check_diversity_view_results="0" end_survey_redirect_url="" survey_expiration="" promis_skip_question="0" survey_auth_enabled_single="0" edit_completed_response="0" hide_back_button="0" show_required_field_text="1" confirmation_email_subject="" confirmation_email_content="" confirmation_email_from="" confirmation_email_from_display="" confirmation_email_attach_pdf="0" confirmation_email_attachment="" text_to_speech="0" text_to_speech_language="en" end_survey_redirect_next_survey="0" theme="" text_size="1" font_family="16" theme_text_buttons="" theme_bg_page="" theme_text_title="" theme_bg_title="" theme_text_sectionheader="" theme_bg_sectionheader="" theme_text_question="" theme_bg_question="" enhanced_choices="0" repeat_survey_enabled="0" repeat_survey_btn_text="" repeat_survey_btn_location="AFTER_SUBMIT" response_limit="" response_limit_include_partials="1" response_limit_custom_text="&lt;p&gt;Thank you for your interest; however, the survey is closed because the maximum number of responses has been reached.&lt;/p&gt;" survey_time_limit_days="" survey_time_limit_hours="" survey_time_limit_minutes="" email_participant_field="" end_of_survey_pdf_download="0" pdf_save_to_field="" pdf_save_to_event_id="" pdf_auto_archive="0" pdf_econsent_version="" pdf_econsent_type="" pdf_econsent_firstname_field="" pdf_econsent_firstname_event_id="" pdf_econsent_lastname_field="" pdf_econsent_lastname_event_id="" pdf_econsent_dob_field="" pdf_econsent_dob_event_id="" pdf_econsent_allow_edit="0" pdf_econsent_signature_field1="" pdf_econsent_signature_field2="" pdf_econsent_signature_field3="" pdf_econsent_signature_field4="" pdf_econsent_signature_field5=""/>
+		<redcap:Surveys form_name="delegation_log_add" title="Delegation Log Add" instructions="&lt;p&gt;&lt;strong&gt;Please complete the delegation log entry.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Thank you!&lt;/p&gt;" acknowledgement="&lt;p&gt;&lt;strong&gt;Thank you for entering the delegation log details.&lt;/strong&gt;&lt;/p&gt;" question_by_section="0" display_page_number="0" question_auto_numbering="0" survey_enabled="1" save_and_return="0" save_and_return_code_bypass="0" logo="" hide_title="0" view_results="0" min_responses_view_results="10" check_diversity_view_results="0" end_survey_redirect_url="" survey_expiration="" promis_skip_question="0" survey_auth_enabled_single="0" edit_completed_response="0" hide_back_button="0" show_required_field_text="1" confirmation_email_subject="" confirmation_email_content="" confirmation_email_from="" confirmation_email_from_display="" confirmation_email_attach_pdf="0" confirmation_email_attachment="" text_to_speech="0" text_to_speech_language="en" end_survey_redirect_next_survey="0" theme="" text_size="1" font_family="16" theme_text_buttons="" theme_bg_page="" theme_text_title="" theme_bg_title="" theme_text_sectionheader="" theme_bg_sectionheader="" theme_text_question="" theme_bg_question="" enhanced_choices="0" repeat_survey_enabled="0" repeat_survey_btn_text="" repeat_survey_btn_location="AFTER_SUBMIT" response_limit="" response_limit_include_partials="1" response_limit_custom_text="&lt;p&gt;Thank you for your interest; however, the survey is closed because the maximum number of responses has been reached.&lt;/p&gt;" survey_time_limit_days="" survey_time_limit_hours="" survey_time_limit_minutes="" email_participant_field="" end_of_survey_pdf_download="0" pdf_save_to_field="" pdf_save_to_event_id="" pdf_auto_archive="0" pdf_econsent_version="" pdf_econsent_type="" pdf_econsent_firstname_field="" pdf_econsent_firstname_event_id="" pdf_econsent_lastname_field="" pdf_econsent_lastname_event_id="" pdf_econsent_dob_field="" pdf_econsent_dob_event_id="" pdf_econsent_allow_edit="0" pdf_econsent_signature_field1="" pdf_econsent_signature_field2="" pdf_econsent_signature_field3="" pdf_econsent_signature_field4="" pdf_econsent_signature_field5=""/>
+		<redcap:Surveys form_name="delegation_log_remove" title="Delegation Log Remove" instructions="&lt;p&gt;&lt;strong&gt;Please complete the removal of a member of staff from the delegation log.&lt;/strong&gt;&lt;/p&gt;" acknowledgement="&lt;p&gt;&lt;strong&gt;Thank you for keeping the delegation log up to date.&lt;/strong&gt;&lt;/p&gt;" question_by_section="0" display_page_number="0" question_auto_numbering="1" survey_enabled="1" save_and_return="0" save_and_return_code_bypass="0" logo="" hide_title="0" view_results="0" min_responses_view_results="10" check_diversity_view_results="0" end_survey_redirect_url="" survey_expiration="" promis_skip_question="0" survey_auth_enabled_single="0" edit_completed_response="0" hide_back_button="0" show_required_field_text="1" confirmation_email_subject="" confirmation_email_content="" confirmation_email_from="" confirmation_email_from_display="" confirmation_email_attach_pdf="0" confirmation_email_attachment="" text_to_speech="0" text_to_speech_language="en" end_survey_redirect_next_survey="0" theme="" text_size="1" font_family="16" theme_text_buttons="" theme_bg_page="" theme_text_title="" theme_bg_title="" theme_text_sectionheader="" theme_bg_sectionheader="" theme_text_question="" theme_bg_question="" enhanced_choices="0" repeat_survey_enabled="0" repeat_survey_btn_text="" repeat_survey_btn_location="AFTER_SUBMIT" response_limit="" response_limit_include_partials="1" response_limit_custom_text="&lt;p&gt;Thank you for your interest; however, the survey is closed because the maximum number of responses has been reached.&lt;/p&gt;" survey_time_limit_days="" survey_time_limit_hours="" survey_time_limit_minutes="" email_participant_field="" end_of_survey_pdf_download="0" pdf_save_to_field="" pdf_save_to_event_id="" pdf_auto_archive="0" pdf_econsent_version="" pdf_econsent_type="" pdf_econsent_firstname_field="" pdf_econsent_firstname_event_id="" pdf_econsent_lastname_field="" pdf_econsent_lastname_event_id="" pdf_econsent_dob_field="" pdf_econsent_dob_event_id="" pdf_econsent_allow_edit="0" pdf_econsent_signature_field1="" pdf_econsent_signature_field2="" pdf_econsent_signature_field3="" pdf_econsent_signature_field4="" pdf_econsent_signature_field5=""/>
+	</redcap:SurveysGroup>
+	<redcap:UserRolesGroup>
+		<redcap:UserRoles role_name="Admin" lock_record="1" lock_record_multiform="1" lock_record_customize="0" data_export_tool="1" data_import_tool="1" data_comparison_tool="1" data_logging="1" file_repository="1" double_data="0" user_rights="1" data_access_groups="1" graphical="1" reports="1" design="1" calendar="1" data_entry="[centre_details,1][gp_details,1][outbreak,3][list_of_pi_eligibility,1][randomisation,1][prescription,1][pharmacy_dispatch,1][day_60,1][trial_status,1][delegation_log_add,1][delegation_log_remove,1][outbreak_confirmatory_pcr,1][receipt_of_drug,1]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="1" record_rename="1" record_delete="0" dts="0" participants="1" data_quality_design="1" data_quality_execute="1" data_quality_resolution="1" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config=""/>
+		<redcap:UserRoles role_name="NCTU" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="2" data_import_tool="0" data_comparison_tool="1" data_logging="1" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="1" calendar="1" data_entry="[centre_details,1][gp_details,1][outbreak,3][list_of_pi_eligibility,1][randomisation,1][prescription,1][pharmacy_dispatch,1][day_60,1][trial_status,1][delegation_log_add,1][delegation_log_remove,1][outbreak_confirmatory_pcr,1][receipt_of_drug,1]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="0" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="0" data_quality_execute="0" data_quality_resolution="1" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config=""/>
+		<redcap:UserRoles role_name="Pharmacist" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="2" data_import_tool="0" data_comparison_tool="0" data_logging="0" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" calendar="1" data_entry="[centre_details,0][gp_details,0][outbreak,0][outbreak_confirmatory_pcr,0][list_of_pi_eligibility,0][randomisation,0][prescription,2][pharmacy_dispatch,1][receipt_of_drug,0][day_60,0][trial_status,0][delegation_log_add,0][delegation_log_remove,0]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="1" record_rename="0" record_delete="0" dts="0" participants="0" data_quality_design="0" data_quality_execute="0" data_quality_resolution="1" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config=""/>
+		<redcap:UserRoles role_name="PI" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="2" data_import_tool="0" data_comparison_tool="0" data_logging="0" file_repository="0" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="0" design="0" calendar="1" data_entry="[centre_details,2][gp_details,2][outbreak,2][outbreak_confirmatory_pcr,2][list_of_pi_eligibility,1][randomisation,1][prescription,1][pharmacy_dispatch,2][receipt_of_drug,2][day_60,2][trial_status,2][delegation_log_add,3][delegation_log_remove,3]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="0" record_rename="0" record_delete="0" dts="0" participants="0" data_quality_design="0" data_quality_execute="0" data_quality_resolution="1" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config=""/>
+		<redcap:UserRoles role_name="Programmer" lock_record="1" lock_record_multiform="1" lock_record_customize="1" data_export_tool="1" data_import_tool="1" data_comparison_tool="1" data_logging="1" file_repository="1" double_data="0" user_rights="1" data_access_groups="1" graphical="1" reports="1" design="1" calendar="1" data_entry="[centre_details,1][gp_details,1][outbreak,1][outbreak_confirmatory_pcr,1][list_of_pi_eligibility,1][randomisation,1][prescription,1][pharmacy_dispatch,1][receipt_of_drug,1][day_60,1][trial_status,1][delegation_log_add,3][delegation_log_remove,3]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="1" record_rename="0" record_delete="0" dts="0" participants="1" data_quality_design="1" data_quality_execute="1" data_quality_resolution="1" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config=""/>
+		<redcap:UserRoles role_name="Statistician" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="3" data_import_tool="0" data_comparison_tool="0" data_logging="0" file_repository="0" double_data="0" user_rights="0" data_access_groups="0" graphical="0" reports="1" design="0" calendar="0" data_entry="[centre_details,2][gp_details,2][outbreak,2][outbreak_confirmatory_pcr,2][list_of_pi_eligibility,2][randomisation,0][prescription,2][pharmacy_dispatch,2][receipt_of_drug,2][day_60,2][trial_status,2][delegation_log_add,0][delegation_log_remove,0]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="0" record_rename="0" record_delete="0" dts="0" participants="1" data_quality_design="0" data_quality_execute="0" data_quality_resolution="1" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config=""/>
+	</redcap:UserRolesGroup>
+	<redcap:ReportsGroup>
+		<redcap:Reports title="Data Export for TRE" report_order="1" user_access="ALL" user_edit_access="ALL" description="" combine_checkbox_values="0" output_dags="0" output_survey_fields="0" output_missing_data_codes="0" remove_line_breaks_in_values="1" orderby_field1="centre_id" orderby_sort1="ASC" orderby_field2="" orderby_sort2="" orderby_field3="" orderby_sort3="" advanced_logic="" filter_type="RECORD" dynamic_filter1="" dynamic_filter2="" dynamic_filter3="" limiter_logic="" redcap_reports_fields="centre_id,centre_strata,centre_name,centre_name_long,centre_postcode,centre_type,centre_occupancy,centre_capacity,centre_size,centre_size_desc,centre_prior_covid,centre_treatments,centre_owner,centre_owner_other,centre_learning_disability,centre_cqc_rating,centre_vax_residents,centre_vax_staff,centre_can_randomise,centre_show_rando_form,centre_details_complete,outbreak_source,outbreak_testdate,outbreak_testtype,outbreak_testtypeother,outbreak_numres,outbreak_complete,rando,rando_time,treatment_duration_weeks,treatment_dose,randomisation_complete,dispatch_date,dispatch_type,dispatch_quant,pharmacy_dispatch_complete,d60_num_residents,d60_covid_cases,day_60_complete,tstatus_stop_treat,tstatus_stop_treat_date,tstatus_stop_treat_reason,tstatus_stop_treat_other,tstatus_stop_data,tstatus_stop_data_date,tstatus_stop_data_reason,tstatus_stop_data_other,trial_status_complete" redcap_reports_filter_dags="" redcap_reports_filter_events="" ID="c1aa04bf421e5b38c3d18933e9994d3f289def65"/>
+	</redcap:ReportsGroup>
+	<redcap:AlertsGroup>
+		<redcap:Alerts alert_title="Send PI eligibility list after outbreak" alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="0" alert_expiration="" form_name="outbreak" form_name_event="event_1_arm_1" alert_condition="" ensure_logic_still_true="0" prevent_piping_identifiers="1" email_incomplete="0" email_from="protect-trial@nottingham.ac.uk" email_from_display="PROTECT-CH Trial" email_to="protect-trial@nottingham.ac.uk;ms-nctu-dm@exmail.nottingham.ac.uk" phone_number_to="" email_cc="" email_bcc="" email_subject="URGENT: Outbreak reported - Resident eligibility assessments required for Centre [record-name] - [centre_name]" alert_message="&lt;p&gt;Dear PROTECT-CH investigators,&lt;/p&gt;
+&lt;p&gt;A PROTECT-CH trial care home has reported an outbreak of COVID-19.&lt;/p&gt;
+&lt;p&gt;Centre ID : [record-name]&lt;/p&gt;
+&lt;p&gt;Centre Name: [centre_name]&lt;/p&gt;
+&lt;p&gt;Please follow the below link in order to complete the eligibiltiy assessment for residents in this care home.&lt;/p&gt;
+&lt;p&gt;[form-link:list_of_pi_eligibility]&lt;/p&gt;
+&lt;p&gt;If you have any queries, please do not hesitate to contact the PROTECT-CH trial team.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;mailto:protect-trial@nottingham.ac.uk&quot;&gt;protect-trial@nottingham.ac.uk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;0115 748 7710&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;" email_failed="ctu-it@nottingham.ac.uk" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-07-15 14:37:09" email_sent="1" alert_number="1"/>
+		<redcap:Alerts alert_title="NCTU locking prescription, each resident&#039;s GP/PI eligibility " alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="0" alert_expiration="" form_name="prescription" form_name_event="event_1_arm_1" alert_condition="[rando] = &#039;2&#039; or [rando] = &#039;3&#039;" ensure_logic_still_true="0" prevent_piping_identifiers="1" email_incomplete="0" email_from="protect-trial@nottingham.ac.uk" email_from_display="PROTECT-CH Trial" email_to="nctu-datamanagement@nottingham.ac.uk" phone_number_to="" email_cc="" email_bcc="" email_subject="Prescription is signed by PI - Site [record-name]" alert_message="&lt;p&gt;Site: [record-name]&lt;/p&gt;
+&lt;p&gt;The prescription for the above site has now be signed by a PROTECT-CH investigator.&lt;/p&gt;
+&lt;p&gt;The Data Management team must now complete the following tasks:&lt;/p&gt;
+&lt;p&gt;1. Lock Prescription form&lt;/p&gt;
+&lt;p&gt;2, Lock each GP confirmation of eligibility form in PROTECT-CH&lt;/p&gt;
+&lt;p&gt;3. Lock each central PI confirmation of eligibility form in PROTECT-CH &lt;/p&gt;
+&lt;p&gt;4. Save each participant randomisation status in PROTECT-CH &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;" email_failed="ms-nctu-it@exmail.nottingham.ac.uk" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-07-05 13:34:37" email_sent="1" alert_number="2"/>
+		<redcap:Alerts alert_title="Notify Care Home the treatment after randomised" alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="0" alert_expiration="" form_name="randomisation" form_name_event="event_1_arm_1" alert_condition="[rando] &lt;&gt; &#039;&#039;" ensure_logic_still_true="0" prevent_piping_identifiers="1" email_incomplete="0" email_from="protect-trial@nottingham.ac.uk" email_from_display="PROTECT-CH Trial" email_to="[centre_email]" phone_number_to="" email_cc="protect-trial@nottingham.ac.uk;[rn_email]" email_bcc="" email_subject="Care Home Treatment " alert_message="&lt;p&gt;Dear  [centre_name],&lt;br /&gt; &lt;br /&gt;This is to notify you that the residents in your care home have been randomised to receive [rando].&lt;br /&gt;&lt;br /&gt;If you have any queries, please do not hesitate to contact the PROTECT-CH trial team.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;Kind regards&lt;br /&gt;PROTECT-CH trial research team&lt;/p&gt;
+&lt;p&gt;Telephone: 0115 7487710&lt;br /&gt;Email: protect-trial@nottingham.ac.uk&lt;br /&gt;Website: http://www.protect-trial.net&lt;/p&gt;" email_failed="ms-nctu-it@exmail.nottingham.ac.uk" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-07-05 11:38:24" email_sent="1" alert_number="3"/>
+		<redcap:Alerts alert_title="Notify Pharmacy prescription" alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="0" alert_expiration="" form_name="prescription" form_name_event="event_1_arm_1" alert_condition="[pi_sign_date]&lt;&gt; &#039;&#039; and ([rando] = &#039;2&#039; or [rando] = &#039;3&#039;)" ensure_logic_still_true="0" prevent_piping_identifiers="1" email_incomplete="0" email_from="protect-trial@nottingham.ac.uk" email_from_display="PROTECT-CH Trial" email_to="nctu-datamanagement@nottingham.ac.uk" phone_number_to="" email_cc="" email_bcc="" email_subject="Prescription for Care Home ID: [record-name] [centre_name]" alert_message="&lt;p&gt;Centre ID : [record-name]&lt;/p&gt;
+&lt;p&gt;Centre Name: [centre_name]&lt;/p&gt;
+&lt;p&gt;Centre Address: [centre_address]&lt;/p&gt;
+&lt;p&gt;Centre Post Code: [centre_postcode]&lt;/p&gt;
+&lt;p&gt;Prescription Signed By [pi_name] on [pi_sign_date]&lt;/p&gt;
+&lt;p&gt;Prescription link : [form-link:prescription]&lt;/p&gt;" email_failed="ms-nctu-it@exmail.nottingham.ac.uk" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-07-05 13:34:37" email_sent="1" alert_number="4"/>
+		<redcap:Alerts alert_title="Inform RN medication despatched" alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="0" alert_expiration="" form_name="pharmacy_dispatch" form_name_event="event_1_arm_1" alert_condition="[dispatch_date] &lt;&gt; &#039;&#039; and [dispatch_type] &lt;&gt; &#039;&#039;" ensure_logic_still_true="1" prevent_piping_identifiers="1" email_incomplete="1" email_from="ctu-it@nottingham.ac.uk" email_from_display="PROTECT-CH Trial" email_to="[rn_email]" phone_number_to="" email_cc="" email_bcc="" email_subject="Medication despatched for care home [centre_name]: [record-name]" alert_message="&lt;p&gt;Dear research nurse team,&lt;/p&gt;
+&lt;p&gt;This is to notify you that PROTECT-CH trial treatment has just been distributed to the below care home.&lt;/p&gt;
+&lt;p&gt;Centre ID : [record-name]&lt;/p&gt;
+&lt;p&gt;Centre Name: [centre_name]&lt;/p&gt;
+&lt;p&gt;Treatment: [rando]&lt;/p&gt;
+&lt;p&gt;Pharmacy Dispatch Information: [form-link:pharmacy_dispatch]&lt;/p&gt;
+&lt;p&gt;Medication: [dispatch_type]&lt;/p&gt;
+&lt;p&gt;Dispatch Date: [dispatch_date]&lt;/p&gt;
+&lt;p&gt;Quantity: [dispatch_quant]&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p style=&quot;margin: 0px; padding: 0px; user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; vertical-align: baseline; font-kerning: none; background-color: transparent; color: windowtext; text-align: left; text-indent: 0px;&quot;&gt;If you have any queries, please do not hesitate to contact the PROTECT-CH trial team.  &lt;/p&gt;
+&lt;p style=&quot;margin: 0px; padding: 0px; user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; vertical-align: baseline; font-kerning: none; background-color: transparent; color: windowtext; text-align: left; text-indent: 0px;&quot;&gt;&lt;a style=&quot;margin: 0px; padding: 0px; user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; cursor: text; text-decoration: none; color: inherit;&quot; href=&quot;mailto:protect-trial@nottingham.ac.uk&quot;&gt;protect-trial@nottingham.ac.uk&lt;/a&gt;  &lt;/p&gt;
+&lt;p style=&quot;margin: 0px; padding: 0px; user-select: text; -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; overflow-wrap: break-word; vertical-align: baseline; font-kerning: none; background-color: transparent; color: windowtext; text-align: left; text-indent: 0px;&quot;&gt;0115 748 7710 &lt;/p&gt;" email_failed="ms-nctu-it@exmail.nottingham.ac.uk" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-07-05 13:50:37" email_sent="1" alert_number="5"/>
+		<redcap:Alerts alert_title="Send PI eligibility list after outbreak" alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="1" alert_expiration="" form_name="outbreak" form_name_event="event_1_arm_1" alert_condition="" ensure_logic_still_true="0" prevent_piping_identifiers="1" email_incomplete="0" email_from="protect-trial@nottingham.ac.uk" email_from_display="PROTECH-CH" email_to="[pharmacy_email]" phone_number_to="" email_cc="chien.may@nottingham.ac.uk" email_bcc="" email_subject="URGENT: Outbreak reported - Resident eligibility assessments required for Centre [record-name] - [centre_name]" alert_message="&lt;p&gt;Dear PROTECT-CH investigators,&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;A PROTECT-CH trial care home has reported an outbreak of COVID-19.&lt;/p&gt;
+&lt;p&gt;Centre ID : [record-name]&lt;/p&gt;
+&lt;p&gt;Centre Name: [centre_name]&lt;/p&gt;
+&lt;p&gt;Please follow the below link in order to complete the eligibiltiy assessment for residents in this care home.&lt;/p&gt;
+&lt;p&gt;Prescription: [form-link:list_of_pi_eligibility]&lt;/p&gt;
+&lt;p&gt;If you have any queries, please do not hesitate to contact the PROTECT-CH trial team.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;mailto:protect-trial@nottingham.ac.uk&quot;&gt;protect-trial@nottingham.ac.uk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;0115 748 7710&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;" email_failed="ctu-it@nottingham.ac.uk" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="" email_sent="0" alert_number="6"/>
+		<redcap:Alerts alert_title="Notify GP of standard care after randomised" alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="0" alert_expiration="" form_name="randomisation" form_name_event="event_1_arm_1" alert_condition="[rando] = 1" ensure_logic_still_true="0" prevent_piping_identifiers="1" email_incomplete="0" email_from="protect-trial@nottingham.ac.uk" email_from_display="PROTECT-CH Trial" email_to="[gp_practice_email]" phone_number_to="" email_cc="protect-trial@nottingham.ac.uk" email_bcc="nina.clayton@nottingham.ac.uk" email_subject="Information: Care home randomised to standard care in PROTECT-CH trial" alert_message="&lt;p&gt;Dear [gp_practice], &lt;/p&gt;
+&lt;p&gt;We wrote to you previously to tell you that your patient(s) at [centre_name] consented to take part in the PROTECT-CH trial to help find prophylactic treatments for COVID-19. Thank you for performing the eligibility checks and providing a copy of their medical record(s). We can now confirm that following a case of COVID-19 the care home has now been randomised and the patient(s) listed below will receive &lt;strong&gt;standard care&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;As part of this trial, your patient(s)’s care home will undertake all their usual processes and procedures to manage the outbreak, but they will not administer any trial medication.&lt;/p&gt;
+&lt;p&gt;For more information on the trial please visit www.protect-trial.net and do not hesitate to contact us if you have any queries.&lt;/p&gt;
+&lt;p&gt;Yours sincerely&lt;/p&gt;
+&lt;p&gt;PROTECT-CH trial research team&lt;/p&gt;
+&lt;p&gt;Telephone: 0115 7487710&lt;br /&gt;Email: protect-trial@nottingham.ac.uk&lt;/p&gt;" email_failed="" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-09-22 15:03:55" email_sent="1" alert_number="7"/>
+		<redcap:Alerts alert_title="Notify CH to complete Follow up" alert_type="EMAIL" alert_stop_type="RECORD" email_deleted="0" alert_expiration="" form_name="randomisation" form_name_event="event_1_arm_1" alert_condition="" ensure_logic_still_true="0" prevent_piping_identifiers="1" email_incomplete="0" email_from="protect-trial@nottingham.ac.uk" email_from_display="PROTECT-CH Trial" email_to="[centre_email]" phone_number_to="" email_cc="protect-trial@nottingham.ac.uk" email_bcc="" email_subject="Action required: Complete 60 day follow up for all participating residents" alert_message="&lt;p&gt;Dear [centre_name] staff,&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0cm; margin-top: 0cm;&quot;&gt;All residents still participating in the trial have now reached the 60 day follow up period.&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0cm; margin-top: 0cm;&quot;&gt; &lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0cm; margin-top: 0cm;&quot;&gt;Please log into &lt;a href=&quot;[redcap-version-url]/DataEntry/record_status_dashboard.php?pid=37&amp;rd_id=8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;REDCap&lt;/a&gt; and complete the EQ5D5L proxy, EQ5D5L Check, Healthcare Support and 60 Day Check forms. Residents who have capacity will also need to complete EQ5D5L questionnaire themselves.&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0cm; margin-top: 0cm;&quot;&gt;You may assist them in completing the questionnaire, however the responses given should be their own.&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 0cm; margin-top: 0cm;&quot;&gt;If you have any further questions, please contact the trial research team (contact details below) who will be more than happy to help.&lt;/p&gt;
+&lt;p&gt;Kind regards&lt;br /&gt;PROTECT-CH trial research team&lt;/p&gt;
+&lt;p&gt;Telephone: 0115 7487710&lt;br /&gt;Email: protect-trial@nottingham.ac.uk&lt;br /&gt;Website: http://www.protect-trial.net&lt;/p&gt;" email_failed="" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="time_lag" cron_send_email_on_date="" cron_send_email_on_time_lag_days="58" cron_send_email_on_time_lag_hours="0" cron_send_email_on_time_lag_minutes="0" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-07-28 12:03:01" email_sent="1" alert_number="8"/>
+		<redcap:Alerts alert_title="Notify PI of new CH manager/senior user in DL" alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="0" alert_expiration="" form_name="delegation_log_add" form_name_event="event_1_arm_1" alert_condition="[dl_name] &lt;&gt; &#039;&#039; and [dl_role(1)] = &#039;1&#039; and [dl_piname] = &#039;&#039;" ensure_logic_still_true="1" prevent_piping_identifiers="1" email_incomplete="1" email_from="protect-trial@nottingham.ac.uk" email_from_display="" email_to="[centre_pi_email]" phone_number_to="" email_cc="protect-trial@nottingham.ac.uk" email_bcc="" email_subject=" Alert to PI to notify them that the CH manager has added themselves to the delegation log and needs authorising " alert_message="&lt;p&gt;Dear [centre_pi_name],  &lt;/p&gt;
+&lt;p&gt;This is to notify you that the manager of the above care home has added themselves to the delegation log for [centre_name_long]. This now needs your approval before they can proceed to delegate duties to their care home staff.  &lt;/p&gt;
+&lt;p&gt;Please follow the below link to authorise this member of staff as &lt;strong&gt;Care Home Lead.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[form-link:delegation_log_add:Click here to view new care home lead in delegation log]&lt;/p&gt;
+&lt;p&gt;Or log into &lt;a href=&quot;https://redcap01.nottingham.ac.uk,&quot;&gt;https://redcap01.nottingham.ac.uk,&lt;/a&gt; choose PROTECT-CH Centres project, Advanced Reports - Delegation Log Senior CH users needing PI sign off.&lt;/p&gt;
+&lt;p&gt;If you have any further questions, please contact the trial research team (contact details below) who will be more than happy to help.  &lt;/p&gt;
+&lt;p&gt;Kind regards   &lt;/p&gt;
+&lt;p&gt;PROTECT-CH trial research team  &lt;/p&gt;
+&lt;p&gt;Telephone: 0115 7487710  &lt;br /&gt;Email: protect-trial@nottingham.ac.uk  &lt;br /&gt;Website: http://www.protect-trial.net  &lt;/p&gt;" email_failed="" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-09-23 10:10:58" email_sent="1" alert_number="9"/>
+		<redcap:Alerts alert_title="Alert Senior CH user that PI has authorised them to add others to the delegation log." alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="0" alert_expiration="" form_name="delegation_log_add" form_name_event="event_1_arm_1" alert_condition="[dl_piname] &lt;&gt; &#039;&#039; and [dl_pisigndate] &lt;&gt; &#039;&#039;" ensure_logic_still_true="1" prevent_piping_identifiers="0" email_incomplete="1" email_from="protect-trial@nottingham.ac.uk" email_from_display="" email_to="[centre_email]" phone_number_to="" email_cc="protect-trial@nottingham.ac.uk" email_bcc="" email_subject="Alert to CH manager that PI has authorised their role and they may now progress to delegating responsibilities within the CH " alert_message="&lt;p&gt;Dear [dl_schuname], &lt;br /&gt; &lt;br /&gt;This is to notify you that your PROTECT-CH Principal Investigator has authorised your role as Care Home Lead for PROTECT-CH. &lt;br /&gt; &lt;br /&gt;You may now follow the below link, in order to begin delegating responsibilities to members of staff in your care home. Please ensure that staff have completed the necessary PROTECT-CH training modules before they are delegated any trial responsibilities.&lt;/p&gt;
+&lt;p&gt;[survey_url_delegation_log]&lt;br /&gt; &lt;br /&gt;If you have any further questions, please contact the trial research team (contact details below) who will be more than happy to help.  &lt;br /&gt; &lt;br /&gt;Kind regards  &lt;br /&gt; &lt;br /&gt;PROTECT-CH trial research team  &lt;br /&gt;Telephone: 0115 7487710  &lt;br /&gt;Email: protect-trial@nottingham.ac.uk  &lt;br /&gt;Website: http://www.protect-trial.net  &lt;/p&gt;" email_failed="" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="0" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-10-08 14:37:39" email_sent="1" alert_number="10"/>
+		<redcap:Alerts alert_title="Notify GP of standard care after randomised" alert_type="EMAIL" alert_stop_type="RECORD_EVENT_INSTRUMENT_INSTANCE" email_deleted="1" alert_expiration="" form_name="randomisation" form_name_event="event_1_arm_1" alert_condition="" ensure_logic_still_true="0" prevent_piping_identifiers="1" email_incomplete="0" email_from="protect-trial@nottingham.ac.uk" email_from_display="PROTECT-CH Trial" email_to="ms-nctu-it@exmail.nottingham.ac.uk;[centre_pi_email]" phone_number_to="" email_cc="" email_bcc="nina.clayton@nottingham.ac.uk" email_subject="Information: Care home randomised to standard care in PROTECT-CH trial" alert_message="&lt;p&gt;Dear [gp_practice], &lt;/p&gt;
+&lt;p&gt;We wrote to you previously to tell you that your patient(s) at [centre_name] consented to take part in the PROTECT-CH trial to help find prophylactic treatments for COVID-19. Thank you for performing the eligibility checks and providing a copy of their medical record(s). We can now confirm that following a case of COVID-19 the care home has now been randomised and the patient(s) listed below will receive standard care.&lt;/p&gt;
+&lt;p&gt;As part of this trial, your patient(s)’s care home will undertake all their usual processes and procedures to manage the outbreak, but they will not administer any trial medication.&lt;/p&gt;
+&lt;p&gt;For more information on the trial please visit www.protect-trial.net and do not hesitate to contact us if you have any queries.&lt;/p&gt;
+&lt;p&gt;Yours sincerely&lt;/p&gt;
+&lt;p&gt;PROTECT-CH trial research team&lt;/p&gt;
+&lt;p&gt;Telephone: 0115 7487710&lt;br /&gt;Email: protect-trial@nottingham.ac.uk&lt;/p&gt;" email_failed="" email_attachment_variable="" email_attachment1="" email_attachment2="" email_attachment3="" email_attachment4="" email_attachment5="" email_repetitive="1" email_repetitive_change="0" email_repetitive_change_calcs="0" cron_send_email_on="now" cron_send_email_on_date="" cron_send_email_on_time_lag_days="" cron_send_email_on_time_lag_hours="" cron_send_email_on_time_lag_minutes="" cron_send_email_on_field="" cron_send_email_on_field_after="after" cron_send_email_on_next_day_type="DAY" cron_send_email_on_next_time="" cron_repeat_for="0" cron_repeat_for_units="DAYS" cron_repeat_for_max="" email_timestamp_sent="2021-09-22 15:31:59" email_sent="1" alert_number="11"/>
+	</redcap:AlertsGroup>
+</GlobalVariables>
+<MetaDataVersion OID="Metadata.PROTECTCHCentres_2021-11-11_1059" Name="PROTECT-CH Centres" redcap:RecordIdField="centre_id">
+	<FormDef OID="Form.centre_details" Name="Centre Details" Repeating="No" redcap:FormName="centre_details">
+		<ItemGroupRef ItemGroupOID="centre_details.centre_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="centre_details.centre_details_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.gp_details" Name="GP Details" Repeating="No" redcap:FormName="gp_details">
+		<ItemGroupRef ItemGroupOID="gp_details.gp_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="gp_details.gp_details_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.outbreak" Name="Outbreak" Repeating="No" redcap:FormName="outbreak">
+		<ItemGroupRef ItemGroupOID="outbreak.outbreak_source" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="outbreak.outbreak_testdate" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="outbreak.outbreak_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.outbreak_confirmatory_pcr" Name="Outbreak - Confirmatory PCR" Repeating="No" redcap:FormName="outbreak_confirmatory_pcr">
+		<ItemGroupRef ItemGroupOID="outbreak_confirmatory_pcr.outbreak_pcr_desc" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="outbreak_confirmatory_pcr.outbreak_confirmatory_pcr_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.list_of_pi_eligibility" Name="List of PI Eligibility" Repeating="No" redcap:FormName="list_of_pi_eligibility">
+		<ItemGroupRef ItemGroupOID="list_of_pi_eligibility.pi_elig_value" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="list_of_pi_eligibility.list_of_pi_eligibility_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.randomisation" Name="Randomisation" Repeating="No" redcap:FormName="randomisation">
+		<ItemGroupRef ItemGroupOID="randomisation.rando_desc" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="randomisation.randomisation_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.prescription" Name="Prescription" Repeating="No" redcap:FormName="prescription">
+		<ItemGroupRef ItemGroupOID="prescription.presc" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="prescription.prescription_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.pharmacy_dispatch" Name="Pharmacy dispatch" Repeating="No" redcap:FormName="pharmacy_dispatch">
+		<ItemGroupRef ItemGroupOID="pharmacy_dispatch.display_ch_address" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="pharmacy_dispatch.pharmacy_dispatch_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.receipt_of_drug" Name="Receipt of Drug" Repeating="No" redcap:FormName="receipt_of_drug">
+		<ItemGroupRef ItemGroupOID="receipt_of_drug.receipt_date" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="receipt_of_drug.receipt_type" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="receipt_of_drug.receipt_of_drug_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.day_60" Name="Day 60" Repeating="No" redcap:FormName="day_60">
+		<ItemGroupRef ItemGroupOID="day_60.d60_date" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="day_60.day_60_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.trial_status" Name="Trial status" Repeating="No" redcap:FormName="trial_status">
+		<ItemGroupRef ItemGroupOID="trial_status.tstatus_desc" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="trial_status.tstatus_stop_treat" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="trial_status.tstatus_stop_treat_date" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="trial_status.tstatus_stop_data" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="trial_status.tstatus_stop_data_desc" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="trial_status.trial_status_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.delegation_log_add" Name="Delegation Log Add" Repeating="No" redcap:FormName="delegation_log_add">
+		<ItemGroupRef ItemGroupOID="delegation_log_add.dl_centre_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="delegation_log_add.dl_name" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="delegation_log_add.delegation_log_add_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.delegation_log_remove" Name="Delegation Log Remove" Repeating="No" redcap:FormName="delegation_log_remove">
+		<ItemGroupRef ItemGroupOID="delegation_log_remove.dlr_centre_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="delegation_log_remove.delegation_log_remove_complete" Mandatory="No"/>
+	</FormDef>
+	<ItemGroupDef OID="centre_details.centre_id" Name="Centre Details" Repeating="No">
+		<ItemRef ItemOID="centre_id" Mandatory="No" redcap:Variable="centre_id"/>
+		<ItemRef ItemOID="centre_strata" Mandatory="Yes" redcap:Variable="centre_strata"/>
+		<ItemRef ItemOID="centre_name" Mandatory="Yes" redcap:Variable="centre_name"/>
+		<ItemRef ItemOID="centre_name_long" Mandatory="Yes" redcap:Variable="centre_name_long"/>
+		<ItemRef ItemOID="centre_address" Mandatory="Yes" redcap:Variable="centre_address"/>
+		<ItemRef ItemOID="centre_postcode" Mandatory="Yes" redcap:Variable="centre_postcode"/>
+		<ItemRef ItemOID="centre_country" Mandatory="Yes" redcap:Variable="centre_country"/>
+		<ItemRef ItemOID="centre_latitude" Mandatory="No" redcap:Variable="centre_latitude"/>
+		<ItemRef ItemOID="centre_longitude" Mandatory="No" redcap:Variable="centre_longitude"/>
+		<ItemRef ItemOID="centre_email" Mandatory="Yes" redcap:Variable="centre_email"/>
+		<ItemRef ItemOID="centre_tel" Mandatory="Yes" redcap:Variable="centre_tel"/>
+		<ItemRef ItemOID="centre_pi_name" Mandatory="Yes" redcap:Variable="centre_pi_name"/>
+		<ItemRef ItemOID="centre_pi_email" Mandatory="Yes" redcap:Variable="centre_pi_email"/>
+		<ItemRef ItemOID="centre_deputy_pi_name" Mandatory="No" redcap:Variable="centre_deputy_pi_name"/>
+		<ItemRef ItemOID="centre_deputy_pi_email" Mandatory="No" redcap:Variable="centre_deputy_pi_email"/>
+		<ItemRef ItemOID="centre_type" Mandatory="Yes" redcap:Variable="centre_type"/>
+		<ItemRef ItemOID="centre_occupancy" Mandatory="Yes" redcap:Variable="centre_occupancy"/>
+		<ItemRef ItemOID="centre_capacity" Mandatory="Yes" redcap:Variable="centre_capacity"/>
+		<ItemRef ItemOID="centre_size" Mandatory="No" redcap:Variable="centre_size"/>
+		<ItemRef ItemOID="centre_size_desc" Mandatory="No" redcap:Variable="centre_size_desc"/>
+		<ItemRef ItemOID="centre_size_disp" Mandatory="No" redcap:Variable="centre_size_disp"/>
+		<ItemRef ItemOID="centre_prior_covid" Mandatory="Yes" redcap:Variable="centre_prior_covid"/>
+		<ItemRef ItemOID="centre_treatments___0" Mandatory="Yes" redcap:Variable="centre_treatments"/>
+		<ItemRef ItemOID="centre_treatments___1" Mandatory="Yes" redcap:Variable="centre_treatments"/>
+		<ItemRef ItemOID="centre_treatments___2" Mandatory="Yes" redcap:Variable="centre_treatments"/>
+		<ItemRef ItemOID="centre_treatments___3" Mandatory="Yes" redcap:Variable="centre_treatments"/>
+		<ItemRef ItemOID="centre_owner" Mandatory="Yes" redcap:Variable="centre_owner"/>
+		<ItemRef ItemOID="centre_owner_other" Mandatory="Yes" redcap:Variable="centre_owner_other"/>
+		<ItemRef ItemOID="centre_learning_disability" Mandatory="Yes" redcap:Variable="centre_learning_disability"/>
+		<ItemRef ItemOID="centre_cqc_rating" Mandatory="Yes" redcap:Variable="centre_cqc_rating"/>
+		<ItemRef ItemOID="centre_vax_residents" Mandatory="Yes" redcap:Variable="centre_vax_residents"/>
+		<ItemRef ItemOID="centre_vax_staff" Mandatory="Yes" redcap:Variable="centre_vax_staff"/>
+		<ItemRef ItemOID="centre_can_randomise" Mandatory="Yes" redcap:Variable="centre_can_randomise"/>
+		<ItemRef ItemOID="centre_show_rando_form" Mandatory="No" redcap:Variable="centre_show_rando_form"/>
+		<ItemRef ItemOID="rn_email" Mandatory="Yes" redcap:Variable="rn_email"/>
+		<ItemRef ItemOID="survey_url_outbreak" Mandatory="No" redcap:Variable="survey_url_outbreak"/>
+		<ItemRef ItemOID="survey_url_delegation_log" Mandatory="No" redcap:Variable="survey_url_delegation_log"/>
+		<ItemRef ItemOID="survey_url_delegation_log1" Mandatory="No" redcap:Variable="survey_url_delegation_log1"/>
+		<ItemRef ItemOID="survey_url_delegation_log_rm" Mandatory="No" redcap:Variable="survey_url_delegation_log_rm"/>
+		<ItemRef ItemOID="survey_url_delegation_log_rm1" Mandatory="No" redcap:Variable="survey_url_delegation_log_rm1"/>
+		<ItemRef ItemOID="survey_url_disp" Mandatory="No" redcap:Variable="survey_url_disp"/>
+		<ItemRef ItemOID="centre_chart_data" Mandatory="No" redcap:Variable="centre_chart_data"/>
+		<ItemRef ItemOID="centre_chart_time" Mandatory="No" redcap:Variable="centre_chart_time"/>
+		<ItemRef ItemOID="lbrk" Mandatory="No" redcap:Variable="lbrk"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="centre_details.centre_details_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="centre_details_complete" Mandatory="No" redcap:Variable="centre_details_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="gp_details.gp_id" Name="GP Details" Repeating="No">
+		<ItemRef ItemOID="gp_id" Mandatory="Yes" redcap:Variable="gp_id"/>
+		<ItemRef ItemOID="gp_practice" Mandatory="Yes" redcap:Variable="gp_practice"/>
+		<ItemRef ItemOID="gp_names" Mandatory="Yes" redcap:Variable="gp_names"/>
+		<ItemRef ItemOID="gp_names_line1" Mandatory="No" redcap:Variable="gp_names_line1"/>
+		<ItemRef ItemOID="gp_address" Mandatory="Yes" redcap:Variable="gp_address"/>
+		<ItemRef ItemOID="gp_address_line1" Mandatory="No" redcap:Variable="gp_address_line1"/>
+		<ItemRef ItemOID="gp_address_line2" Mandatory="No" redcap:Variable="gp_address_line2"/>
+		<ItemRef ItemOID="gp_address_line3" Mandatory="No" redcap:Variable="gp_address_line3"/>
+		<ItemRef ItemOID="gp_address_line4" Mandatory="No" redcap:Variable="gp_address_line4"/>
+		<ItemRef ItemOID="gp_postcode" Mandatory="Yes" redcap:Variable="gp_postcode"/>
+		<ItemRef ItemOID="gp_practice_phone" Mandatory="Yes" redcap:Variable="gp_practice_phone"/>
+		<ItemRef ItemOID="gp_practice_email" Mandatory="Yes" redcap:Variable="gp_practice_email"/>
+		<ItemRef ItemOID="gp_practice_notes" Mandatory="No" redcap:Variable="gp_practice_notes"/>
+		<ItemRef ItemOID="gp_active" Mandatory="Yes" redcap:Variable="gp_active"/>
+		<ItemRef ItemOID="gp_chart_data" Mandatory="No" redcap:Variable="gp_chart_data"/>
+		<ItemRef ItemOID="gp_chart_time" Mandatory="No" redcap:Variable="gp_chart_time"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="gp_details.gp_details_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="gp_details_complete" Mandatory="No" redcap:Variable="gp_details_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="outbreak.outbreak_source" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;table style=&quot;border-collapse: collapse; width: 100%; height: 34px; font-size: 110%;&quot;&gt; &lt;tbody&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home ID:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_id]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home Name:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="outbreak_source" Mandatory="Yes" redcap:Variable="outbreak_source"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="outbreak.outbreak_testdate" Name="Outbreak" Repeating="No">
+		<ItemRef ItemOID="outbreak_testdate" Mandatory="Yes" redcap:Variable="outbreak_testdate"/>
+		<ItemRef ItemOID="outbreak_testtype" Mandatory="Yes" redcap:Variable="outbreak_testtype"/>
+		<ItemRef ItemOID="outbreak_testtypeother" Mandatory="Yes" redcap:Variable="outbreak_testtypeother"/>
+		<ItemRef ItemOID="outbreak_numres" Mandatory="Yes" redcap:Variable="outbreak_numres"/>
+		<ItemRef ItemOID="outbreak_oxygen" Mandatory="Yes" redcap:Variable="outbreak_oxygen"/>
+		<ItemRef ItemOID="pi_elig_count" Mandatory="No" redcap:Variable="pi_elig_count"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="outbreak.outbreak_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="outbreak_complete" Mandatory="No" redcap:Variable="outbreak_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="outbreak_confirmatory_pcr.outbreak_pcr_desc" Name="Outbreak - Confirmatory PCR" Repeating="No">
+		<ItemRef ItemOID="outbreak_pcr_desc" Mandatory="No" redcap:Variable="outbreak_pcr_desc"/>
+		<ItemRef ItemOID="outbreak_pcr_testdate" Mandatory="Yes" redcap:Variable="outbreak_pcr_testdate"/>
+		<ItemRef ItemOID="outbreak_pcr_results" Mandatory="Yes" redcap:Variable="outbreak_pcr_results"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="outbreak_confirmatory_pcr.outbreak_confirmatory_pcr_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="outbreak_confirmatory_pcr_complete" Mandatory="No" redcap:Variable="outbreak_confirmatory_pcr_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="list_of_pi_eligibility.pi_elig_value" Name="List of PI Eligibility" Repeating="No">
+		<ItemRef ItemOID="pi_elig_value" Mandatory="No" redcap:Variable="pi_elig_value"/>
+		<ItemRef ItemOID="none_list" Mandatory="No" redcap:Variable="none_list"/>
+		<ItemRef ItemOID="elig_list" Mandatory="No" redcap:Variable="elig_list"/>
+		<ItemRef ItemOID="pi_elig_num" Mandatory="No" redcap:Variable="pi_elig_num"/>
+		<ItemRef ItemOID="elig_list_tbl" Mandatory="No" redcap:Variable="elig_list_tbl"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="list_of_pi_eligibility.list_of_pi_eligibility_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="list_of_pi_eligibility_complete" Mandatory="No" redcap:Variable="list_of_pi_eligibility_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="randomisation.rando_desc" Name="Randomisation" Repeating="No">
+		<ItemRef ItemOID="rando_desc" Mandatory="No" redcap:Variable="rando_desc"/>
+		<ItemRef ItemOID="rando" Mandatory="No" redcap:Variable="rando"/>
+		<ItemRef ItemOID="rando_time" Mandatory="No" redcap:Variable="rando_time"/>
+		<ItemRef ItemOID="rando_date" Mandatory="No" redcap:Variable="rando_date"/>
+		<ItemRef ItemOID="rando_bogus" Mandatory="No" redcap:Variable="rando_bogus"/>
+		<ItemRef ItemOID="rando_diag" Mandatory="No" redcap:Variable="rando_diag"/>
+		<ItemRef ItemOID="treatment_duration_weeks" Mandatory="No" redcap:Variable="treatment_duration_weeks"/>
+		<ItemRef ItemOID="treatment_dose" Mandatory="No" redcap:Variable="treatment_dose"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="randomisation.randomisation_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="randomisation_complete" Mandatory="No" redcap:Variable="randomisation_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="prescription.presc" Name="Prescription" Repeating="No">
+		<ItemRef ItemOID="presc" Mandatory="No" redcap:Variable="presc"/>
+		<ItemRef ItemOID="display_none" Mandatory="No" redcap:Variable="display_none"/>
+		<ItemRef ItemOID="display_ch_treat_cic" Mandatory="No" redcap:Variable="display_ch_treat_cic"/>
+		<ItemRef ItemOID="display_ch_treat_nic" Mandatory="No" redcap:Variable="display_ch_treat_nic"/>
+		<ItemRef ItemOID="presc_tbl" Mandatory="No" redcap:Variable="presc_tbl"/>
+		<ItemRef ItemOID="display_med_2" Mandatory="Yes" redcap:Variable="display_med_2"/>
+		<ItemRef ItemOID="pi_name" Mandatory="Yes" redcap:Variable="pi_name"/>
+		<ItemRef ItemOID="pi_signed_info" Mandatory="No" redcap:Variable="pi_signed_info"/>
+		<ItemRef ItemOID="pi_sign" Mandatory="Yes" redcap:Variable="pi_sign"/>
+		<ItemRef ItemOID="pi_sign_date" Mandatory="Yes" redcap:Variable="pi_sign_date"/>
+		<ItemRef ItemOID="display_print" Mandatory="No" redcap:Variable="display_print"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="prescription.prescription_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="prescription_complete" Mandatory="No" redcap:Variable="prescription_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="pharmacy_dispatch.display_ch_address" Name="Pharmacy dispatch" Repeating="No">
+		<ItemRef ItemOID="display_ch_address" Mandatory="Yes" redcap:Variable="display_ch_address"/>
+		<ItemRef ItemOID="dispatch_date" Mandatory="Yes" redcap:Variable="dispatch_date"/>
+		<ItemRef ItemOID="dispatch_type" Mandatory="Yes" redcap:Variable="dispatch_type"/>
+		<ItemRef ItemOID="dispatch_quant" Mandatory="Yes" redcap:Variable="dispatch_quant"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="pharmacy_dispatch.pharmacy_dispatch_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="pharmacy_dispatch_complete" Mandatory="No" redcap:Variable="pharmacy_dispatch_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="receipt_of_drug.receipt_date" Name="&lt;table style=&quot;border-collapse: collapse; width: 100%; height: 34px; font-size: 110%;&quot;&gt; &lt;tbody&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home ID:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_id]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home Name:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;" Repeating="No">
+		<ItemRef ItemOID="receipt_date" Mandatory="Yes" redcap:Variable="receipt_date"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="receipt_of_drug.receipt_type" Name="Receipt of Drug" Repeating="No">
+		<ItemRef ItemOID="receipt_type" Mandatory="Yes" redcap:Variable="receipt_type"/>
+		<ItemRef ItemOID="receipt_quant" Mandatory="Yes" redcap:Variable="receipt_quant"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="receipt_of_drug.receipt_of_drug_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="receipt_of_drug_complete" Mandatory="No" redcap:Variable="receipt_of_drug_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="day_60.d60_date" Name="Day 60" Repeating="No">
+		<ItemRef ItemOID="d60_date" Mandatory="No" redcap:Variable="d60_date"/>
+		<ItemRef ItemOID="d60_num_residents" Mandatory="Yes" redcap:Variable="d60_num_residents"/>
+		<ItemRef ItemOID="d60_covid_cases" Mandatory="Yes" redcap:Variable="d60_covid_cases"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="day_60.day_60_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="day_60_complete" Mandatory="No" redcap:Variable="day_60_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="trial_status.tstatus_desc" Name="Trial status" Repeating="No">
+		<ItemRef ItemOID="tstatus_desc" Mandatory="No" redcap:Variable="tstatus_desc"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="trial_status.tstatus_stop_treat" Name=" " Repeating="No">
+		<ItemRef ItemOID="tstatus_stop_treat" Mandatory="Yes" redcap:Variable="tstatus_stop_treat"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="trial_status.tstatus_stop_treat_date" Name="Trial status" Repeating="No">
+		<ItemRef ItemOID="tstatus_stop_treat_date" Mandatory="Yes" redcap:Variable="tstatus_stop_treat_date"/>
+		<ItemRef ItemOID="tstatus_stop_treat_reason___1" Mandatory="Yes" redcap:Variable="tstatus_stop_treat_reason"/>
+		<ItemRef ItemOID="tstatus_stop_treat_reason___2" Mandatory="Yes" redcap:Variable="tstatus_stop_treat_reason"/>
+		<ItemRef ItemOID="tstatus_stop_treat_reason___3" Mandatory="Yes" redcap:Variable="tstatus_stop_treat_reason"/>
+		<ItemRef ItemOID="tstatus_stop_treat_reason___4" Mandatory="Yes" redcap:Variable="tstatus_stop_treat_reason"/>
+		<ItemRef ItemOID="tstatus_stop_treat_reason___99" Mandatory="Yes" redcap:Variable="tstatus_stop_treat_reason"/>
+		<ItemRef ItemOID="tstatus_stop_treat_other" Mandatory="Yes" redcap:Variable="tstatus_stop_treat_other"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="trial_status.tstatus_stop_data" Name=" " Repeating="No">
+		<ItemRef ItemOID="tstatus_stop_data" Mandatory="Yes" redcap:Variable="tstatus_stop_data"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="trial_status.tstatus_stop_data_desc" Name="Trial status" Repeating="No">
+		<ItemRef ItemOID="tstatus_stop_data_desc" Mandatory="No" redcap:Variable="tstatus_stop_data_desc"/>
+		<ItemRef ItemOID="tstatus_stop_data_date" Mandatory="Yes" redcap:Variable="tstatus_stop_data_date"/>
+		<ItemRef ItemOID="tstatus_stop_data_reason___1" Mandatory="Yes" redcap:Variable="tstatus_stop_data_reason"/>
+		<ItemRef ItemOID="tstatus_stop_data_reason___2" Mandatory="Yes" redcap:Variable="tstatus_stop_data_reason"/>
+		<ItemRef ItemOID="tstatus_stop_data_reason___99" Mandatory="Yes" redcap:Variable="tstatus_stop_data_reason"/>
+		<ItemRef ItemOID="tstatus_stop_data_other" Mandatory="Yes" redcap:Variable="tstatus_stop_data_other"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="trial_status.trial_status_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="trial_status_complete" Mandatory="No" redcap:Variable="trial_status_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="delegation_log_add.dl_centre_id" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;table style=&quot;border-collapse: collapse; width: 100%; height: 34px; font-size: 110%;&quot;&gt; &lt;tbody&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home ID:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_id]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home Name:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="dl_centre_id" Mandatory="Yes" redcap:Variable="dl_centre_id"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="delegation_log_add.dl_name" Name="Delegation Log Add" Repeating="No">
+		<ItemRef ItemOID="dl_name" Mandatory="Yes" redcap:Variable="dl_name"/>
+		<ItemRef ItemOID="dl_role___1" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_role___2" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_role___3" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_role___4" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_role___5" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_role___6" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_role___7" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_role___8" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_role___9" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_role___10" Mandatory="Yes" redcap:Variable="dl_role"/>
+		<ItemRef ItemOID="dl_sign" Mandatory="Yes" redcap:Variable="dl_sign"/>
+		<ItemRef ItemOID="dl_datesigned" Mandatory="Yes" redcap:Variable="dl_datesigned"/>
+		<ItemRef ItemOID="dl_schuname" Mandatory="Yes" redcap:Variable="dl_schuname"/>
+		<ItemRef ItemOID="dl_schusign" Mandatory="Yes" redcap:Variable="dl_schusign"/>
+		<ItemRef ItemOID="dl_schudatesigned" Mandatory="Yes" redcap:Variable="dl_schudatesigned"/>
+		<ItemRef ItemOID="dl_pilabel" Mandatory="No" redcap:Variable="dl_pilabel"/>
+		<ItemRef ItemOID="dl_piname" Mandatory="No" redcap:Variable="dl_piname"/>
+		<ItemRef ItemOID="dl_pisign" Mandatory="No" redcap:Variable="dl_pisign"/>
+		<ItemRef ItemOID="dl_pisigndate" Mandatory="No" redcap:Variable="dl_pisigndate"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="delegation_log_add.delegation_log_add_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="delegation_log_add_complete" Mandatory="No" redcap:Variable="delegation_log_add_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="delegation_log_remove.dlr_centre_id" Name="Delegation Log Remove" Repeating="No">
+		<ItemRef ItemOID="dlr_centre_id" Mandatory="Yes" redcap:Variable="dlr_centre_id"/>
+		<ItemRef ItemOID="dlr_name" Mandatory="Yes" redcap:Variable="dlr_name"/>
+		<ItemRef ItemOID="dlr_date" Mandatory="Yes" redcap:Variable="dlr_date"/>
+		<ItemRef ItemOID="dlr_by" Mandatory="Yes" redcap:Variable="dlr_by"/>
+		<ItemRef ItemOID="dlr_sign" Mandatory="Yes" redcap:Variable="dlr_sign"/>
+		<ItemRef ItemOID="dlr_signdate" Mandatory="Yes" redcap:Variable="dlr_signdate"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="delegation_log_remove.delegation_log_remove_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="delegation_log_remove_complete" Mandatory="No" redcap:Variable="delegation_log_remove_complete"/>
+	</ItemGroupDef>
+	<ItemDef OID="centre_id" Name="centre_id" DataType="text" Length="999" redcap:Variable="centre_id" redcap:FieldType="text">
+		<Question><TranslatedText>Centre ID</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_strata" Name="centre_strata" DataType="text" Length="999" redcap:Variable="centre_strata" redcap:FieldType="text" redcap:FieldNote="Increment the default value for this field (and in any unrandomised centres) when randomisation parameters updated." redcap:RequiredField="y" redcap:FieldAnnotation="@HIDDEN @DEFAULT=&#039;1&#039;">
+		<Question><TranslatedText>Randomisation strata</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_name" Name="centre_name" DataType="text" Length="999" redcap:Variable="centre_name" redcap:FieldType="text" redcap:RequiredField="y" redcap:FieldAnnotation="@CHARLIMIT=20">
+		<Question><TranslatedText>Centre Name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_name_long" Name="centre_name_long" DataType="text" Length="999" redcap:Variable="centre_name_long" redcap:FieldType="text" redcap:RequiredField="y">
+		<Question><TranslatedText>Long Centre Name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_address" Name="centre_address" DataType="text" Length="999" redcap:Variable="centre_address" redcap:FieldType="textarea" redcap:RequiredField="y">
+		<Question><TranslatedText>Centre Address</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_postcode" Name="centre_postcode" DataType="text" Length="999" redcap:Variable="centre_postcode" redcap:FieldType="text" redcap:RequiredField="y" redcap:FieldAnnotation="@REGEX=&#039;^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$&#039;">
+		<Question><TranslatedText>Centre Postcode</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_country" Name="centre_country" DataType="text" Length="1" redcap:Variable="centre_country" redcap:FieldType="radio" redcap:RequiredField="y">
+		<Question><TranslatedText>Centre Country</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_country.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_latitude" Name="centre_latitude" DataType="float" Length="999" redcap:Variable="centre_latitude" redcap:FieldType="text" redcap:TextValidationType="number_3dp" redcap:FieldNote="Please enter latitude accurate to 3 decimal places.">
+		<Question><TranslatedText>Centre Latitude</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>-90.000</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (-90.000 - 90.000). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>90.000</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (-90.000 - 90.000). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="centre_longitude" Name="centre_longitude" DataType="float" Length="999" redcap:Variable="centre_longitude" redcap:FieldType="text" redcap:TextValidationType="number_3dp" redcap:FieldNote="Please enter longitude accurate to 3 decimal places.">
+		<Question><TranslatedText>Centre Longitude</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>-180.000</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (-180.000 - 180.000). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>180.000</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (-180.000 - 180.000). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="centre_email" Name="centre_email" DataType="text" Length="999" redcap:Variable="centre_email" redcap:FieldType="text" redcap:TextValidationType="email" redcap:RequiredField="y">
+		<Question><TranslatedText>Centre E-mail</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_tel" Name="centre_tel" DataType="text" Length="999" redcap:Variable="centre_tel" redcap:FieldType="text" redcap:RequiredField="y" redcap:FieldAnnotation="@REGEX=&quot;^\s*(([+]\s?\d[-\s]?\d|0)?\s?\d([-\s]?\d){9}|[(]\s?\d([-\s]?\d)+\s*[)]([-\s]?\d)+)\s*$&quot;">
+		<Question><TranslatedText>Centre Telephone</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_pi_name" Name="centre_pi_name" DataType="text" Length="999" redcap:Variable="centre_pi_name" redcap:FieldType="text" redcap:RequiredField="y">
+		<Question><TranslatedText>PI name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_pi_email" Name="centre_pi_email" DataType="text" Length="999" redcap:Variable="centre_pi_email" redcap:FieldType="text" redcap:TextValidationType="email" redcap:RequiredField="y">
+		<Question><TranslatedText>PI email</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_deputy_pi_name" Name="centre_deputy_pi_name" DataType="text" Length="999" redcap:Variable="centre_deputy_pi_name" redcap:FieldType="text" redcap:FieldNote="Deputy PI only needs to be completed in the absence of PI ">
+		<Question><TranslatedText>Deputy PI name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_deputy_pi_email" Name="centre_deputy_pi_email" DataType="text" Length="999" redcap:Variable="centre_deputy_pi_email" redcap:FieldType="text" redcap:TextValidationType="email" redcap:FieldNote="Deputy PI only needs to be completed in the absence of PI ">
+		<Question><TranslatedText>Deputy PI email</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_type" Name="centre_type" DataType="text" Length="1" redcap:Variable="centre_type" redcap:FieldType="radio" redcap:RequiredField="y">
+		<Question><TranslatedText>Centre Type
+(What kind of clients is the centre registered for?)</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_type.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_occupancy" Name="centre_occupancy" DataType="integer" Length="999" redcap:Variable="centre_occupancy" redcap:FieldType="text" redcap:TextValidationType="int" redcap:RequiredField="y">
+		<Question><TranslatedText>Centre occupancy
+(number of residents currently in centre)</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>1</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1 - no limit). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="centre_capacity" Name="centre_capacity" DataType="integer" Length="999" redcap:Variable="centre_capacity" redcap:FieldType="text" redcap:TextValidationType="int" redcap:RequiredField="y">
+		<Question><TranslatedText>Centre capacity
+(number of beds in centre)</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>20</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (20 - no limit). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="centre_size" Name="centre_size" DataType="float" Length="999" redcap:Variable="centre_size" redcap:FieldType="calc" redcap:Calculation="if ( [outbreak_numres] = &#039;&#039;, &#039;&#039;,
+     if ( [outbreak_numres] &lt;= 30, 1,
+          if ( [outbreak_numres] &lt;= 50, 2, 3 ) ) )" redcap:FieldAnnotation="@HIDDEN">
+		<Question><TranslatedText>Centre Size</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_size_desc" Name="centre_size_desc" DataType="text" Length="999" redcap:Variable="centre_size_desc" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT( if ( [centre_size] = 1, &#039;Small (up to 30 residents)&#039;, if ( [centre_size] = 2, &#039;Medium (31 - 50 residents)&#039;, if ( [centre_size] = 3, &#039;Large (more than 50 residents)&#039;, &#039;[data to be collected at outbreak]&#039; ) ) ) )">
+		<Question><TranslatedText>Centre Size</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_size_disp" Name="centre_size_disp" DataType="text" Length="999" redcap:Variable="centre_size_disp" redcap:FieldType="descriptive">
+		<Question><TranslatedText>Centre Size
+(used for randomisation, based on centre
+occupancy reported at time of outbreak)[centre_size_desc]</TranslatedText><redcap:FormattedTranslatedText>&lt;table style=&quot;width:100%&quot;&gt;&lt;tr&gt;&lt;td style=&quot;width:60%&quot;&gt;Centre Size
+(used for randomisation, based on centre
+occupancy reported at time of outbreak)&lt;/td&gt;&lt;td style=&quot;font-weight:normal&quot;&gt;[centre_size_desc]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_prior_covid" Name="centre_prior_covid" DataType="boolean" Length="1" redcap:Variable="centre_prior_covid" redcap:FieldType="yesno" redcap:RequiredField="y">
+		<Question><TranslatedText>Prior COVID-19 in centre</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_prior_covid.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_treatments___0" Name="centre_treatments___0" DataType="boolean" Length="1" redcap:Variable="centre_treatments" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:FieldAnnotation="@NONEOFTHEABOVE=0">
+		<Question><TranslatedText>Treatments the centre has the facility to provide</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_treatments___0.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_treatments___1" Name="centre_treatments___1" DataType="boolean" Length="1" redcap:Variable="centre_treatments" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:FieldAnnotation="@NONEOFTHEABOVE=0">
+		<Question><TranslatedText>Treatments the centre has the facility to provide</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_treatments___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_treatments___2" Name="centre_treatments___2" DataType="boolean" Length="1" redcap:Variable="centre_treatments" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:FieldAnnotation="@NONEOFTHEABOVE=0">
+		<Question><TranslatedText>Treatments the centre has the facility to provide</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_treatments___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_treatments___3" Name="centre_treatments___3" DataType="boolean" Length="1" redcap:Variable="centre_treatments" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:FieldAnnotation="@NONEOFTHEABOVE=0">
+		<Question><TranslatedText>Treatments the centre has the facility to provide</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_treatments___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_owner" Name="centre_owner" DataType="text" Length="1" redcap:Variable="centre_owner" redcap:FieldType="radio" redcap:RequiredField="y">
+		<Question><TranslatedText>Centre Ownership</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_owner.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_owner_other" Name="centre_owner_other" DataType="text" Length="999" redcap:Variable="centre_owner_other" redcap:FieldType="text" redcap:RequiredField="y" redcap:BranchingLogic="[centre_owner] = &#039;4&#039;">
+		<Question><TranslatedText>If other, please specify</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_learning_disability" Name="centre_learning_disability" DataType="boolean" Length="1" redcap:Variable="centre_learning_disability" redcap:FieldType="yesno" redcap:RequiredField="y">
+		<Question><TranslatedText>Centre is registered for clients with learning disabilities</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_learning_disability.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_cqc_rating" Name="centre_cqc_rating" DataType="text" Length="1" redcap:Variable="centre_cqc_rating" redcap:FieldType="radio" redcap:RequiredField="y">
+		<Question><TranslatedText>Centre CQC Rating
+(or equivalent in devolved administrations)</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_cqc_rating.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_vax_residents" Name="centre_vax_residents" DataType="boolean" Length="1" redcap:Variable="centre_vax_residents" redcap:FieldType="yesno" redcap:RequiredField="y">
+		<Question><TranslatedText>Any residents received vaccination against COVID-19</TranslatedText><redcap:FormattedTranslatedText>Any &lt;i&gt;residents&lt;/i&gt; received vaccination against COVID-19</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="centre_vax_residents.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_vax_staff" Name="centre_vax_staff" DataType="boolean" Length="1" redcap:Variable="centre_vax_staff" redcap:FieldType="yesno" redcap:RequiredField="y">
+		<Question><TranslatedText>Any staff received vaccination against COVID-19</TranslatedText><redcap:FormattedTranslatedText>Any &lt;i&gt;staff&lt;/i&gt; received vaccination against COVID-19</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="centre_vax_staff.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_can_randomise" Name="centre_can_randomise" DataType="boolean" Length="1" redcap:Variable="centre_can_randomise" redcap:FieldType="yesno" redcap:RequiredField="y" redcap:FieldAnnotation="@DEFAULT=&#039;0&#039;">
+		<Question><TranslatedText>Centre is ready to randomise</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_can_randomise.choices"/>
+	</ItemDef>
+	<ItemDef OID="centre_show_rando_form" Name="centre_show_rando_form" DataType="float" Length="999" redcap:Variable="centre_show_rando_form" redcap:FieldType="calc" redcap:Calculation="if([rando] &lt;&gt; &#039;&#039; or
+   ( [centre_can_randomise] = &#039;1&#039; and
+     [centre_type] &lt;&gt; &#039;&#039; and
+     [centre_prior_covid] &lt;&gt; &#039;&#039; and
+     [centre_size] &lt;&gt; &#039;&#039; and
+     [centre_ox_dex] &lt;&gt; &#039;&#039; ),
+ 1,0)" redcap:FieldAnnotation="@HIDDEN">
+		<Question><TranslatedText>Display randomisation form</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="rn_email" Name="rn_email" DataType="text" Length="999" redcap:Variable="rn_email" redcap:FieldType="text" redcap:TextValidationType="email" redcap:RequiredField="y">
+		<Question><TranslatedText>Research nurse e-mail</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="survey_url_outbreak" Name="survey_url_outbreak" DataType="text" Length="999" redcap:Variable="survey_url_outbreak" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT([survey-url:outbreak])">
+		<Question><TranslatedText>Outbreak survey URL</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="survey_url_delegation_log" Name="survey_url_delegation_log" DataType="text" Length="999" redcap:Variable="survey_url_delegation_log" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT(concat(&#039;https://redcap01.nottingham.ac.uk/bespoke/protect-ch/delegation_log_add.php?&#039;,mid([survey_url_delegation_log1],find(&#039;=&#039;,[survey_url_delegation_log1])+1,100)))">
+		<Question><TranslatedText>Delegation log (add) survey URL</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="survey_url_delegation_log1" Name="survey_url_delegation_log1" DataType="text" Length="999" redcap:Variable="survey_url_delegation_log1" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT([survey-url:delegation_log_add])">
+		<Question><TranslatedText>Delegation log (add) survey URL (instance 1)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="survey_url_delegation_log_rm" Name="survey_url_delegation_log_rm" DataType="text" Length="999" redcap:Variable="survey_url_delegation_log_rm" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT(concat(&#039;https://redcap01.nottingham.ac.uk/bespoke/protect-ch/delegation_log_rem.php?&#039;,mid([survey_url_delegation_log_rm1],find(&#039;=&#039;,[survey_url_delegation_log_rm1])+1,100)))">
+		<Question><TranslatedText>Delegation log (remove) survey URL</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="survey_url_delegation_log_rm1" Name="survey_url_delegation_log_rm1" DataType="text" Length="999" redcap:Variable="survey_url_delegation_log_rm1" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT([survey-url:delegation_log_remove])">
+		<Question><TranslatedText>Delegation log (remove) survey URL (instance 1)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="survey_url_disp" Name="survey_url_disp" DataType="text" Length="999" redcap:Variable="survey_url_disp" redcap:FieldType="descriptive">
+		<Question><TranslatedText>Survey URLsOutbreak[survey_url_outbreak]Delegation log (add)[survey_url_delegation_log]Delegation log (remove)[survey_url_delegation_log_rm] </TranslatedText><redcap:FormattedTranslatedText>&lt;p&gt;Survey URLs&lt;/p&gt;&lt;table style=&quot;border-collapse:collapse;width: 100%;font-weight:normal&quot; border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td style=&quot;width: 25%;&quot;&gt;Outbreak&lt;/td&gt;&lt;td&gt;[survey_url_outbreak]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Delegation log (add)&lt;/td&gt;&lt;td&gt;[survey_url_delegation_log]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Delegation log (remove)&lt;/td&gt;&lt;td&gt;[survey_url_delegation_log_rm]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt; &lt;/p&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_chart_data" Name="centre_chart_data" DataType="text" Length="999" redcap:Variable="centre_chart_data" redcap:FieldType="textarea" redcap:FieldAnnotation="@HIDDEN-PDF @HIDDEN">
+		<Question><TranslatedText>CHaRT submission return data</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_chart_time" Name="centre_chart_time" DataType="datetime" Length="999" redcap:Variable="centre_chart_time" redcap:FieldType="text" redcap:TextValidationType="datetime_seconds_dmy" redcap:FieldAnnotation="@HIDDEN-PDF @HIDDEN">
+		<Question><TranslatedText>CHaRT submission time</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="lbrk" Name="lbrk" DataType="text" Length="999" redcap:Variable="lbrk" redcap:FieldType="textarea" redcap:FieldAnnotation="@HIDDEN
+@PREFILL=&quot;1
+1&quot;">
+		<Question><TranslatedText></TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="centre_details_complete" Name="centre_details_complete" DataType="text" Length="1" redcap:Variable="centre_details_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="centre_details_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="gp_id" Name="gp_id" DataType="text" Length="999" redcap:Variable="gp_id" redcap:FieldType="text" redcap:RequiredField="y" redcap:FieldAnnotation="@CALCTEXT(concat(&#039;GP-&#039;,[centre_id],&#039;-&#039;,[current-instance]))">
+		<Question><TranslatedText>GP Practice ID</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_practice" Name="gp_practice" DataType="text" Length="999" redcap:Variable="gp_practice" redcap:FieldType="text" redcap:RequiredField="y">
+		<Question><TranslatedText>GP Practice Name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_names" Name="gp_names" DataType="text" Length="999" redcap:Variable="gp_names" redcap:FieldType="textarea" redcap:RequiredField="y">
+		<Question><TranslatedText>GP Names</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_names_line1" Name="gp_names_line1" DataType="text" Length="999" redcap:Variable="gp_names_line1" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT(trim(left([gp_names],find(mid([lbrk],2,1),concat([gp_names],mid([lbrk],2,1)))-1)))">
+		<Question><TranslatedText>GP Names (line 1)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_address" Name="gp_address" DataType="text" Length="999" redcap:Variable="gp_address" redcap:FieldType="textarea" redcap:RequiredField="y">
+		<Question><TranslatedText>GP Practice Address</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_address_line1" Name="gp_address_line1" DataType="text" Length="999" redcap:Variable="gp_address_line1" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT(trim(left([gp_address],find(mid([lbrk],2,1),concat([gp_address],mid([lbrk],2,1)))-1)))">
+		<Question><TranslatedText>GP Practice Address (line 1)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_address_line2" Name="gp_address_line2" DataType="text" Length="999" redcap:Variable="gp_address_line2" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT(trim(mid([gp_address],length([gp_address_line1])+2,find(mid([lbrk],2,1),mid(concat([gp_address],mid([lbrk],2,1)),length([gp_address_line1])+2,10000))-1)))">
+		<Question><TranslatedText>GP Practice Address (line 2)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_address_line3" Name="gp_address_line3" DataType="text" Length="999" redcap:Variable="gp_address_line3" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT(trim(mid([gp_address],length([gp_address_line1])+length([gp_address_line2])+3,find(mid([lbrk],2,1),mid(concat([gp_address],mid([lbrk],2,1)),length([gp_address_line1])+length([gp_address_line2])+3,10000))-1)))">
+		<Question><TranslatedText>GP Practice Address (line 3)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_address_line4" Name="gp_address_line4" DataType="text" Length="999" redcap:Variable="gp_address_line4" redcap:FieldType="text" redcap:FieldAnnotation="@HIDDEN @CALCTEXT(trim(mid([gp_address],length([gp_address_line1])+length([gp_address_line2])+length([gp_address_line3])+4,find(mid([lbrk],2,1),mid(concat([gp_address],mid([lbrk],2,1)),length([gp_address_line1])+length([gp_address_line2])+length([gp_address_line3])+4,10000))-1)))">
+		<Question><TranslatedText>GP Practice Address (line 4)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_postcode" Name="gp_postcode" DataType="text" Length="999" redcap:Variable="gp_postcode" redcap:FieldType="text" redcap:RequiredField="y" redcap:FieldAnnotation="@REGEX=&#039;^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$&#039;">
+		<Question><TranslatedText>GP Practice Postcode</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_practice_phone" Name="gp_practice_phone" DataType="text" Length="999" redcap:Variable="gp_practice_phone" redcap:FieldType="text" redcap:FieldNote="Please enter the full telephone number, starting with &#039;0&#039; or &#039;+44&#039;, without spaces." redcap:RequiredField="y" redcap:FieldAnnotation="@REGEX=&#039;^(0|\+44)[0-9]{9,10}$&#039;">
+		<Question><TranslatedText>GP Practice Telephone</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_practice_email" Name="gp_practice_email" DataType="text" Length="999" redcap:Variable="gp_practice_email" redcap:FieldType="text" redcap:TextValidationType="email" redcap:RequiredField="y">
+		<Question><TranslatedText>GP Practice Email Address</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_practice_notes" Name="gp_practice_notes" DataType="text" Length="999" redcap:Variable="gp_practice_notes" redcap:FieldType="textarea">
+		<Question><TranslatedText>GP Practice Notes
+(any additional information)</TranslatedText><redcap:FormattedTranslatedText>GP Practice Notes
+&lt;span style=&quot;font-size:x-small&quot;&gt;(any additional information)&lt;/span&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_active" Name="gp_active" DataType="boolean" Length="1" redcap:Variable="gp_active" redcap:FieldType="yesno" redcap:RequiredField="y" redcap:FieldAnnotation="@DEFAULT=&#039;1&#039;">
+		<Question><TranslatedText>GP Practice Active
+If a GP practice is no longer required, please
+deactivate here instead of deleting the entry.</TranslatedText><redcap:FormattedTranslatedText>GP Practice Active
+&lt;span style=&quot;color: #e03e2d;font-size:x-small&quot;&gt;If a GP practice is no longer required, please
+deactivate here instead of deleting the entry.&lt;/span&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="gp_active.choices"/>
+	</ItemDef>
+	<ItemDef OID="gp_chart_data" Name="gp_chart_data" DataType="text" Length="999" redcap:Variable="gp_chart_data" redcap:FieldType="textarea" redcap:FieldAnnotation="@HIDDEN-PDF @HIDDEN">
+		<Question><TranslatedText>CHaRT submission return data</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_chart_time" Name="gp_chart_time" DataType="datetime" Length="999" redcap:Variable="gp_chart_time" redcap:FieldType="text" redcap:TextValidationType="datetime_seconds_dmy" redcap:FieldAnnotation="@HIDDEN-PDF @HIDDEN">
+		<Question><TranslatedText>CHaRT submission time</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="gp_details_complete" Name="gp_details_complete" DataType="text" Length="1" redcap:Variable="gp_details_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="gp_details_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="outbreak_source" Name="outbreak_source" DataType="text" Length="1" redcap:Variable="outbreak_source" redcap:FieldType="radio" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;table style=&quot;border-collapse: collapse; width: 100%; height: 34px; font-size: 110%;&quot;&gt; &lt;tbody&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home ID:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_id]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home Name:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;&lt;/div&gt;" redcap:RequiredField="y">
+		<Question><TranslatedText>Source of COVID-19 outbreak</TranslatedText></Question>
+		<CodeListRef CodeListOID="outbreak_source.choices"/>
+	</ItemDef>
+	<ItemDef OID="outbreak_testdate" Name="outbreak_testdate" DataType="date" Length="999" redcap:Variable="outbreak_testdate" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Date that positive test was taken</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>2021-03-31</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (2021-03-31 - no limit). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="outbreak_testtype" Name="outbreak_testtype" DataType="text" Length="1" redcap:Variable="outbreak_testtype" redcap:FieldType="radio" redcap:RequiredField="y">
+		<Question><TranslatedText>Type of test taken</TranslatedText></Question>
+		<CodeListRef CodeListOID="outbreak_testtype.choices"/>
+	</ItemDef>
+	<ItemDef OID="outbreak_testtypeother" Name="outbreak_testtypeother" DataType="text" Length="999" redcap:Variable="outbreak_testtypeother" redcap:FieldType="text" redcap:RequiredField="y" redcap:BranchingLogic="[outbreak_testtype] = &#039;99&#039;">
+		<Question><TranslatedText>Other test type</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="outbreak_numres" Name="outbreak_numres" DataType="integer" Length="999" redcap:Variable="outbreak_numres" redcap:FieldType="text" redcap:TextValidationType="int" redcap:RequiredField="y">
+		<Question><TranslatedText>Total number of residents currently living at the care home</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>1</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1 - 999). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>999</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1 - 999). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="outbreak_oxygen" Name="outbreak_oxygen" DataType="boolean" Length="1" redcap:Variable="outbreak_oxygen" redcap:FieldType="yesno" redcap:RequiredField="y">
+		<Question><TranslatedText>Does your care home have the capacity to give oxygen?</TranslatedText></Question>
+		<CodeListRef CodeListOID="outbreak_oxygen.choices"/>
+	</ItemDef>
+	<ItemDef OID="pi_elig_count" Name="pi_elig_count" DataType="text" Length="1" redcap:Variable="pi_elig_count" redcap:FieldType="sql" redcap:FieldAnnotation="@HIDDEN @DEFAULT =  &#039;1&#039; @HIDDEN-PDF">
+		<Question><TranslatedText>pi_elig_count
+how many is eligible for PI</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="outbreak_complete" Name="outbreak_complete" DataType="text" Length="1" redcap:Variable="outbreak_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="outbreak_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="outbreak_pcr_desc" Name="outbreak_pcr_desc" DataType="text" Length="999" redcap:Variable="outbreak_pcr_desc" redcap:FieldType="descriptive">
+		<Question><TranslatedText>  Date of lateral flow test [outbreak_testdate]  </TranslatedText><redcap:FormattedTranslatedText>&lt;table style=&quot;border-collapse: collapse; width: 100%;&quot;&gt; &lt;tr&gt; &lt;td style=&quot;width: 58%;&quot;&gt;Date of lateral flow test&lt;/td&gt; &lt;td&gt;[outbreak_testdate]&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="outbreak_pcr_testdate" Name="outbreak_pcr_testdate" DataType="date" Length="999" redcap:Variable="outbreak_pcr_testdate" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Date of PCR test</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="outbreak_pcr_results" Name="outbreak_pcr_results" DataType="text" Length="1" redcap:Variable="outbreak_pcr_results" redcap:FieldType="radio" redcap:RequiredField="y">
+		<Question><TranslatedText>Was the PCR test result positive?</TranslatedText></Question>
+		<CodeListRef CodeListOID="outbreak_pcr_results.choices"/>
+	</ItemDef>
+	<ItemDef OID="outbreak_confirmatory_pcr_complete" Name="outbreak_confirmatory_pcr_complete" DataType="text" Length="1" redcap:Variable="outbreak_confirmatory_pcr_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="outbreak_confirmatory_pcr_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="pi_elig_value" Name="pi_elig_value" DataType="integer" Length="999" redcap:Variable="pi_elig_value" redcap:FieldType="text" redcap:TextValidationType="int" redcap:FieldAnnotation="@HIDDEN @HIDDEN-PDF @DEFAULT=&#039;[pi_elig_count]&#039;">
+		<Question><TranslatedText>pi_elig_value
+ (hidden)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="none_list" Name="none_list" DataType="text" Length="999" redcap:Variable="none_list" redcap:FieldType="descriptive" redcap:BranchingLogic="[pi_elig_value] = 0 or [pi_elig_value] = &#039;&#039;">
+		<Question><TranslatedText>
+There is no resident eligible in the list.
+
+</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="elig_list" Name="elig_list" DataType="text" Length="1" redcap:Variable="elig_list" redcap:FieldType="sql">
+		<Question><TranslatedText></TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="pi_elig_num" Name="pi_elig_num" DataType="text" Length="1" redcap:Variable="pi_elig_num" redcap:FieldType="sql" redcap:FieldAnnotation="@HIDDEN @DEFAULT =&#039;1&#039; @HIDDEN-PDF">
+		<Question><TranslatedText>pi_elig_num
+(hidden)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="elig_list_tbl" Name="elig_list_tbl" DataType="text" Length="999" redcap:Variable="elig_list_tbl" redcap:FieldType="descriptive" redcap:BranchingLogic="[pi_elig_value] &gt; 0">
+		<Question><TranslatedText>
+The list of Central PI Eligibility 
+
+{elig_list}
+
+</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="list_of_pi_eligibility_complete" Name="list_of_pi_eligibility_complete" DataType="text" Length="1" redcap:Variable="list_of_pi_eligibility_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="list_of_pi_eligibility_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="rando_desc" Name="rando_desc" DataType="text" Length="999" redcap:Variable="rando_desc" redcap:FieldType="descriptive" redcap:BranchingLogic="[rando] = &#039;&#039;" redcap:FieldAnnotation="@HIDDEN-SURVEY">
+		<Question><TranslatedText>Please submit this form (with status set to complete) to perform the randomisation for [centre_name].
+
+After the randomisation has been performed, the randomisation result will be displayed on this page.</TranslatedText><redcap:FormattedTranslatedText>Please submit this form (with status set to &lt;i&gt;complete&lt;/i&gt;) to perform the randomisation for [centre_name].
+
+After the randomisation has been performed, the randomisation result will be displayed on this page.</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="rando" Name="rando" DataType="text" Length="1" redcap:Variable="rando" redcap:FieldType="radio" redcap:BranchingLogic="[rando] &lt;&gt; &#039;&#039;" redcap:FieldAnnotation="@HIDDEN-SURVEY">
+		<Question><TranslatedText>Randomisation</TranslatedText></Question>
+		<CodeListRef CodeListOID="rando.choices"/>
+	</ItemDef>
+	<ItemDef OID="rando_time" Name="rando_time" DataType="datetime" Length="999" redcap:Variable="rando_time" redcap:FieldType="text" redcap:TextValidationType="datetime_seconds_dmy" redcap:BranchingLogic="[rando_time] &lt;&gt; &#039;&#039;" redcap:FieldAnnotation="@READONLY @HIDDEN-SURVEY">
+		<Question><TranslatedText>Date/time of randomisation</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="rando_date" Name="rando_date" DataType="date" Length="999" redcap:Variable="rando_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldAnnotation="@CALCTEXT(left([rando_time],10)) @HIDDEN">
+		<Question><TranslatedText>Date of randomisation</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="rando_bogus" Name="rando_bogus" DataType="text" Length="1" redcap:Variable="rando_bogus" redcap:FieldType="radio" redcap:FieldAnnotation="@HIDDEN">
+		<Question><TranslatedText>Bogus randomisation</TranslatedText></Question>
+		<CodeListRef CodeListOID="rando_bogus.choices"/>
+	</ItemDef>
+	<ItemDef OID="rando_diag" Name="rando_diag" DataType="text" Length="999" redcap:Variable="rando_diag" redcap:FieldType="textarea" redcap:Identifier="y" redcap:FieldAnnotation="@HIDDEN">
+		<Question><TranslatedText>Randomisation diagnostic data</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="treatment_duration_weeks" Name="treatment_duration_weeks" DataType="float" Length="999" redcap:Variable="treatment_duration_weeks" redcap:FieldType="calc" redcap:Calculation="if( [rando] = &#039;1&#039;, 0,
+if( [rando] = &#039;2&#039;, 6,
+if( [rando] = &#039;3&#039;, 6,
+     &#039;&#039; ) ) )" redcap:FieldAnnotation="@HIDDEN">
+		<Question><TranslatedText>Treatment duration (weeks)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="treatment_dose" Name="treatment_dose" DataType="float" Length="999" redcap:Variable="treatment_dose" redcap:FieldType="calc" redcap:Calculation="if( [rando] = &#039;2&#039;, 7,
+if( [rando] = &#039;3&#039;, 14,
+     &#039;&#039; ) )" redcap:FieldAnnotation="@HIDDEN">
+		<Question><TranslatedText>Treatment dose</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="randomisation_complete" Name="randomisation_complete" DataType="text" Length="1" redcap:Variable="randomisation_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="randomisation_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="presc" Name="presc" DataType="text" Length="1" redcap:Variable="presc" redcap:FieldType="sql" redcap:FieldAnnotation="@HIDDEN @DEFAULT=&#039;1&#039; @HIDDEN-PDF">
+		<Question><TranslatedText>presc  (Eligible Residents without html to store into field)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="display_none" Name="display_none" DataType="text" Length="999" redcap:Variable="display_none" redcap:FieldType="descriptive" redcap:BranchingLogic="[rando] = &#039;1&#039;">
+		<Question><TranslatedText>   Care Home Name: [centre_name_long]   Treatment:  [rando]   There is no prescription for this treatment.   </TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;table style=&quot;font-size: 110%; border-collapse: collapse; width: 100%; height: 127px;&quot;&gt; &lt;tbody&gt; &lt;tr style=&quot;height: 25px;&quot;&gt; &lt;td style=&quot;width: 19.2762%; height: 25px;&quot;&gt;Care Home Name:&lt;/td&gt; &lt;td style=&quot;width: 79.8258%; height: 25px; color: purple;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 29px;&quot;&gt; &lt;td style=&quot;width: 19.2762%; height: 29px;&quot;&gt;Treatment: &lt;/td&gt; &lt;td style=&quot;width: 79.8258%; height: 29px; color: purple;&quot;&gt;[rando]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 35px;&quot;&gt; &lt;td style=&quot;width: 99.102%; height: 35px;&quot; colspan=&quot;2&quot;&gt;There is no prescription for this treatment.&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="display_ch_treat_cic" Name="display_ch_treat_cic" DataType="text" Length="999" redcap:Variable="display_ch_treat_cic" redcap:FieldType="descriptive" redcap:BranchingLogic="[rando] =&#039;2&#039;">
+		<Question><TranslatedText>   Care Home Name:  [centre_name_long]   Address: [centre_address] [centre_postcode]   Treatment: 2 x xxxxxxxxxxx 160 micrograms per actuation inhaler   Dosage:  Inhale THREE puffs ONCE a day via the supplied spacer device   </TranslatedText><redcap:FormattedTranslatedText>&lt;table style=&quot;font-size: 110%; border-collapse: collapse; width: 100%; height: 99px;&quot;&gt; &lt;tbody&gt; &lt;tr style=&quot;height: 19px;&quot;&gt; &lt;td style=&quot;width: 19.5461%; height: 30px;&quot;&gt;Care Home Name: &lt;/td&gt; &lt;td style=&quot;width: 79.5559%; height: 30px; color: purple;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;width: 19.5461%; vertical-align: top; padding-top: 5px;&quot;&gt;Address:&lt;/td&gt; &lt;td style=&quot;width: 79.5559%; color: purple;&quot;&gt;[centre_address] [centre_postcode]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 19px;&quot;&gt; &lt;td style=&quot;width: 19.5461%; height: 29px;&quot;&gt;Treatment:&lt;/td&gt; &lt;td style=&quot;width: 79.5559%; height: 29px; color: purple;&quot;&gt;2 x xxxxxxxxxxx 160 micrograms per actuation inhaler&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;width: 19.5461%;height: 29px; &quot;&gt;Dosage:&lt;/td&gt; &lt;td style=&quot;width: 79.5559%; color: purple;&quot;&gt; Inhale THREE puffs ONCE a day via the supplied spacer device&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="display_ch_treat_nic" Name="display_ch_treat_nic" DataType="text" Length="999" redcap:Variable="display_ch_treat_nic" redcap:FieldType="descriptive" redcap:BranchingLogic="[rando] = &#039;3&#039;">
+		<Question><TranslatedText>   Care Home Name:  [centre_name_long]   Address: [centre_address] [centre_postcode]   Treatment: 3 x 8.5 mL xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx    Dosage:   ONE spray to be used in EACH nostril TWICE a day    </TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;table style=&quot;font-size: 110%; border-collapse: collapse; width: 100%; height: 116px;&quot;&gt; &lt;tbody&gt; &lt;tr style=&quot;height: 19px;&quot;&gt; &lt;td style=&quot;width: 19.1218%; height: 30px;&quot;&gt;Care Home Name: &lt;/td&gt; &lt;td style=&quot;width: 79.9802%; height: 30px; color: purple;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 19px;&quot;&gt; &lt;td style=&quot;width: 19.1218%; vertical-align: top; padding-top: 5px; height: 19px;&quot;&gt;Address:&lt;/td&gt; &lt;td style=&quot;width: 79.9802%; color: purple; height: 19px;&quot;&gt;[centre_address] [centre_postcode]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 19px;&quot;&gt; &lt;td style=&quot;width: 19.1218%; height: 29px;&quot;&gt;Treatment:&lt;/td&gt; &lt;td style=&quot;width: 79.9802%; height: 29px; color: purple;&quot;&gt;3 x 8.5 mL xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;width: 19.1218%;&quot;&gt;Dosage: &lt;/td&gt; &lt;td style=&quot;width: 79.9802%; color: purple;&quot;&gt; &lt;p&gt;ONE spray to be used in EACH nostril TWICE a day&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="presc_tbl" Name="presc_tbl" DataType="text" Length="1" redcap:Variable="presc_tbl" redcap:FieldType="sql" redcap:BranchingLogic="[rando] =&#039;2&#039; or [rando] = &#039;3&#039;" redcap:CustomAlignment="LH">
+		<Question><TranslatedText>Please sign off the following eligible residents for a prescription:</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="display_med_2" Name="display_med_2" DataType="text" Length="999" redcap:Variable="display_med_2" redcap:FieldType="descriptive" redcap:Identifier="y" redcap:RequiredField="y" redcap:BranchingLogic="[rando] =&#039;2&#039; or [rando] = &#039;3&#039;" redcap:FieldAnnotation="@HIDDEN">
+		<Question><TranslatedText>
+Please sign off the following eligible residents for a prescription: 
+[Resident ID, Resident Name, Date of Birth, NHS Number, Date of consent, PI Name, PI GMC, PI Signed Date]
+
+
+
+</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;&lt;br /&gt;Please sign off the following eligible residents for a prescription:&lt;/p&gt; &lt;p&gt;&lt;br /&gt;[&lt;span style=&quot;color: #000000;&quot;&gt;Resident ID, Resident Name&lt;/span&gt;, Date of Birth, NHS Number, Date of consent, PI Name, PI GMC, PI Signed Date]&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="pi_name" Name="pi_name" DataType="text" Length="999" redcap:Variable="pi_name" redcap:FieldType="text" redcap:RequiredField="y" redcap:BranchingLogic="[rando] =&#039;2&#039; or [rando] = &#039;3&#039;">
+		<Question><TranslatedText>
+Your Name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="pi_signed_info" Name="pi_signed_info" DataType="text" Length="999" redcap:Variable="pi_signed_info" redcap:FieldType="descriptive" redcap:BranchingLogic="[rando] =&#039;2&#039; or [rando] = &#039;3&#039; and [pi_sign] &lt;&gt; &#039;&#039;">
+		<Question><TranslatedText>
+Signed under the unique electronic credentials of [pi_name]
+
+</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="pi_sign" Name="pi_sign" DataType="text" Length="999" redcap:Variable="pi_sign" redcap:FieldType="file" redcap:TextValidationType="signature" redcap:Identifier="y" redcap:RequiredField="y" redcap:BranchingLogic="[rando] =&#039;2&#039; or [rando] = &#039;3&#039;">
+		<Question><TranslatedText>Signature</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="pi_sign_date" Name="pi_sign_date" DataType="date" Length="999" redcap:Variable="pi_sign_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y" redcap:BranchingLogic="[rando] =&#039;2&#039; or [rando] = &#039;3&#039;">
+		<Question><TranslatedText>Date</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="display_print" Name="display_print" DataType="text" Length="999" redcap:Variable="display_print" redcap:FieldType="descriptive" redcap:BranchingLogic="[rando] =&#039;2&#039; or [rando] = &#039;3&#039; and [pi_sign] &lt;&gt; &#039;&#039;" redcap:FieldAnnotation="@HIDDEN-PDF">
+		<Question><TranslatedText>
+Print Prescription
+
+</TranslatedText><redcap:FormattedTranslatedText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br /&gt;&lt;button id=&quot;printMe&quot; style=&quot;text-align: center;&quot;&gt;&lt;b&gt;Print Prescription&lt;/b&gt;&lt;/button&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="prescription_complete" Name="prescription_complete" DataType="text" Length="1" redcap:Variable="prescription_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="prescription_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="display_ch_address" Name="display_ch_address" DataType="text" Length="999" redcap:Variable="display_ch_address" redcap:FieldType="descriptive" redcap:RequiredField="y">
+		<Question><TranslatedText>    Care Home Details    Name: [centre_name_long]   Address  [centre_address] [centre_postcode]    </TranslatedText><redcap:FormattedTranslatedText>&lt;table style=&quot;border-collapse: collapse; width: 100%; height: 91px;&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td style=&quot;width: 99.102%;&quot; colspan=&quot;2&quot;&gt; &lt;p&gt;Care Home Details&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 35px;&quot;&gt; &lt;td style=&quot;width: 9.46601%; height: 35px;&quot;&gt;Name:&lt;/td&gt; &lt;td style=&quot;width: 89.636%; height: 35px;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 56px;&quot;&gt; &lt;td style=&quot;width: 9.46601%; height: 56px;vertical-align:top;padding-top:5px;&quot;&gt;Address&lt;/td&gt; &lt;td style=&quot;width: 89.636%; height: 56px;&quot;&gt; &lt;p&gt;[centre_address] [centre_postcode]&lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dispatch_date" Name="dispatch_date" DataType="date" Length="999" redcap:Variable="dispatch_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Date of dispatch of trial drug to care home</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dispatch_type" Name="dispatch_type" DataType="text" Length="1" redcap:Variable="dispatch_type" redcap:FieldType="select" redcap:RequiredField="y">
+		<Question><TranslatedText>Trial drug sent</TranslatedText></Question>
+		<CodeListRef CodeListOID="dispatch_type.choices"/>
+	</ItemDef>
+	<ItemDef OID="dispatch_quant" Name="dispatch_quant" DataType="integer" Length="999" redcap:Variable="dispatch_quant" redcap:FieldType="text" redcap:TextValidationType="int" redcap:RequiredField="y">
+		<Question><TranslatedText>Quantity of trial drug packs</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>1</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1 - 1000). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>1000</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1 - 1000). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="pharmacy_dispatch_complete" Name="pharmacy_dispatch_complete" DataType="text" Length="1" redcap:Variable="pharmacy_dispatch_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="pharmacy_dispatch_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="receipt_date" Name="receipt_date" DataType="date" Length="999" redcap:Variable="receipt_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:SectionHeader="&lt;table style=&quot;border-collapse: collapse; width: 100%; height: 34px; font-size: 110%;&quot;&gt; &lt;tbody&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home ID:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_id]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home Name:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;" redcap:RequiredField="y">
+		<Question><TranslatedText>Date of receipt of trial drug at care home</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="receipt_type" Name="receipt_type" DataType="text" Length="1" redcap:Variable="receipt_type" redcap:FieldType="select" redcap:RequiredField="y">
+		<Question><TranslatedText>Trial drug received</TranslatedText></Question>
+		<CodeListRef CodeListOID="receipt_type.choices"/>
+	</ItemDef>
+	<ItemDef OID="receipt_quant" Name="receipt_quant" DataType="integer" Length="999" redcap:Variable="receipt_quant" redcap:FieldType="text" redcap:TextValidationType="int" redcap:RequiredField="y">
+		<Question><TranslatedText>Quantity of trial drug packs received</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>1</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1 - 1000). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>1000</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1 - 1000). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="receipt_of_drug_complete" Name="receipt_of_drug_complete" DataType="text" Length="1" redcap:Variable="receipt_of_drug_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="receipt_of_drug_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="d60_date" Name="d60_date" DataType="date" Length="999" redcap:Variable="d60_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldAnnotation="@CALCDATE([rando_date],60,&#039;d&#039;) @HIDDEN">
+		<Question><TranslatedText>Day 60 date</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="d60_num_residents" Name="d60_num_residents" DataType="integer" Length="999" redcap:Variable="d60_num_residents" redcap:FieldType="text" redcap:TextValidationType="int" redcap:RequiredField="y">
+		<Question><TranslatedText>Total number of residents currently living at the care home</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>0</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (0 - no limit). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="d60_covid_cases" Name="d60_covid_cases" DataType="integer" Length="999" redcap:Variable="d60_covid_cases" redcap:FieldType="text" redcap:TextValidationType="int" redcap:RequiredField="y">
+		<Question><TranslatedText>Total number of positive COVID-19 cases in residents in the 60 days after randomisation
+(between [rando_date] and [d60_date])</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>0</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (0 - no limit). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="day_60_complete" Name="day_60_complete" DataType="text" Length="1" redcap:Variable="day_60_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="day_60_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_desc" Name="tstatus_desc" DataType="text" Length="999" redcap:Variable="tstatus_desc" redcap:FieldType="descriptive">
+		<Question><TranslatedText>This form should be completed by the NCTU to document any change in care home involvement in the trial after randomisation.</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_treat" Name="tstatus_stop_treat" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_treat" redcap:FieldType="yesno" redcap:SectionHeader=" " redcap:RequiredField="y">
+		<Question><TranslatedText>Care home discontinued delivering trial treatment</TranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_treat.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_treat_date" Name="tstatus_stop_treat_date" DataType="date" Length="999" redcap:Variable="tstatus_stop_treat_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_treat] = &#039;1&#039;">
+		<Question><TranslatedText>Date care home discontinued delivering trial treatment</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_treat_reason___1" Name="tstatus_stop_treat_reason___1" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_treat_reason" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_treat] = &#039;1&#039;">
+		<Question><TranslatedText>Reason care home discontinued delivering trial treatment</TranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_treat_reason___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_treat_reason___2" Name="tstatus_stop_treat_reason___2" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_treat_reason" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_treat] = &#039;1&#039;">
+		<Question><TranslatedText>Reason care home discontinued delivering trial treatment</TranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_treat_reason___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_treat_reason___3" Name="tstatus_stop_treat_reason___3" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_treat_reason" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_treat] = &#039;1&#039;">
+		<Question><TranslatedText>Reason care home discontinued delivering trial treatment</TranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_treat_reason___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_treat_reason___4" Name="tstatus_stop_treat_reason___4" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_treat_reason" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_treat] = &#039;1&#039;">
+		<Question><TranslatedText>Reason care home discontinued delivering trial treatment</TranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_treat_reason___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_treat_reason___99" Name="tstatus_stop_treat_reason___99" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_treat_reason" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_treat] = &#039;1&#039;">
+		<Question><TranslatedText>Reason care home discontinued delivering trial treatment</TranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_treat_reason___99.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_treat_other" Name="tstatus_stop_treat_other" DataType="text" Length="999" redcap:Variable="tstatus_stop_treat_other" redcap:FieldType="text" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_treat_reason(99)] = &#039;1&#039;">
+		<Question><TranslatedText>If other, please specify</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_data" Name="tstatus_stop_data" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_data" redcap:FieldType="yesno" redcap:SectionHeader=" " redcap:RequiredField="y">
+		<Question><TranslatedText>The care home will provide no further trial data
+(i.e. data captured within the REDCap database)
+Data captured up to this point will still be used for analysis.</TranslatedText><redcap:FormattedTranslatedText>The care home will provide no further trial data
+(i.e. data captured within the REDCap database)
+&lt;i&gt;Data captured up to this point will still be used for analysis.&lt;/i&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_data.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_data_desc" Name="tstatus_stop_data_desc" DataType="text" Length="999" redcap:Variable="tstatus_stop_data_desc" redcap:FieldType="descriptive" redcap:BranchingLogic="[tstatus_stop_data] = &#039;1&#039;">
+		<Question><TranslatedText>PLEASE ENSURE THAT NO FURTHER TRIAL TREATMENT IS ADMINISTERED
+AS THE HOME IS NO LONGER PROVIDING TRIAL DATA</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_data_date" Name="tstatus_stop_data_date" DataType="date" Length="999" redcap:Variable="tstatus_stop_data_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_data] = &#039;1&#039;">
+		<Question><TranslatedText>Date last trial data collected by care home</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_data_reason___1" Name="tstatus_stop_data_reason___1" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_data_reason" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_data] = &#039;1&#039;">
+		<Question><TranslatedText>Reason care home will not provide further trial data</TranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_data_reason___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_data_reason___2" Name="tstatus_stop_data_reason___2" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_data_reason" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_data] = &#039;1&#039;">
+		<Question><TranslatedText>Reason care home will not provide further trial data</TranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_data_reason___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_data_reason___99" Name="tstatus_stop_data_reason___99" DataType="boolean" Length="1" redcap:Variable="tstatus_stop_data_reason" redcap:FieldType="checkbox" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_data] = &#039;1&#039;">
+		<Question><TranslatedText>Reason care home will not provide further trial data</TranslatedText></Question>
+		<CodeListRef CodeListOID="tstatus_stop_data_reason___99.choices"/>
+	</ItemDef>
+	<ItemDef OID="tstatus_stop_data_other" Name="tstatus_stop_data_other" DataType="text" Length="999" redcap:Variable="tstatus_stop_data_other" redcap:FieldType="text" redcap:RequiredField="y" redcap:BranchingLogic="[tstatus_stop_data_reason(99)] = &#039;1&#039;">
+		<Question><TranslatedText>If other, please specify</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="trial_status_complete" Name="trial_status_complete" DataType="text" Length="1" redcap:Variable="trial_status_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="trial_status_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_centre_id" Name="dl_centre_id" DataType="text" Length="999" redcap:Variable="dl_centre_id" redcap:FieldType="text" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;table style=&quot;border-collapse: collapse; width: 100%; height: 34px; font-size: 110%;&quot;&gt; &lt;tbody&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home ID:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_id]&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height: 17px;&quot;&gt; &lt;td style=&quot;width: 21.2223%; height: 17px;&quot;&gt;Care Home Name:&lt;/td&gt; &lt;td style=&quot;width: 77.8797%; height: 17px;&quot;&gt;[centre_name_long]&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt;&lt;/div&gt;" redcap:RequiredField="y" redcap:FieldAnnotation="@HIDDEN-PDF @HIDDEN @CALCTEXT([centre_id])">
+		<Question><TranslatedText>Centre ID</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dl_name" Name="dl_name" DataType="text" Length="999" redcap:Variable="dl_name" redcap:FieldType="text" redcap:Identifier="y" redcap:RequiredField="y">
+		<Question><TranslatedText>Name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dl_role___1" Name="dl_role___1" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_role___2" Name="dl_role___2" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_role___3" Name="dl_role___3" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_role___4" Name="dl_role___4" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_role___5" Name="dl_role___5" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_role___6" Name="dl_role___6" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_role___7" Name="dl_role___7" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___7.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_role___8" Name="dl_role___8" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___8.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_role___9" Name="dl_role___9" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___9.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_role___10" Name="dl_role___10" DataType="boolean" Length="1" redcap:Variable="dl_role" redcap:FieldType="checkbox" redcap:RequiredField="y">
+		<Question><TranslatedText>Roles to perform</TranslatedText></Question>
+		<CodeListRef CodeListOID="dl_role___10.choices"/>
+	</ItemDef>
+	<ItemDef OID="dl_sign" Name="dl_sign" DataType="text" Length="999" redcap:Variable="dl_sign" redcap:FieldType="file" redcap:TextValidationType="signature" redcap:Identifier="y" redcap:RequiredField="y">
+		<Question><TranslatedText>Signature</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dl_datesigned" Name="dl_datesigned" DataType="date" Length="999" redcap:Variable="dl_datesigned" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Date signed</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>2021-05-01</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (2021-05-01 - 2023-12-31). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>2023-12-31</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (2021-05-01 - 2023-12-31). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="dl_schuname" Name="dl_schuname" DataType="text" Length="999" redcap:Variable="dl_schuname" redcap:FieldType="text" redcap:Identifier="y" redcap:RequiredField="y" redcap:BranchingLogic="[dl_role(2)] = &#039;1&#039; or [dl_role(3)] = &#039;1&#039; or [dl_role(4)] = &#039;1&#039; or [dl_role(5)] = &#039;1&#039; or [dl_role(6)] = &#039;1&#039; or [dl_role(7)] = &#039;1&#039; or [dl_role(8)] = &#039;1&#039; or [dl_role(9)] = &#039;1&#039;">
+		<Question><TranslatedText>Senior Care Home users name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dl_schusign" Name="dl_schusign" DataType="text" Length="999" redcap:Variable="dl_schusign" redcap:FieldType="file" redcap:TextValidationType="signature" redcap:Identifier="y" redcap:RequiredField="y" redcap:BranchingLogic="[dl_role(2)] = &#039;1&#039; or [dl_role(3)] = &#039;1&#039; or [dl_role(4)] = &#039;1&#039; or [dl_role(5)] = &#039;1&#039; or [dl_role(6)] = &#039;1&#039; or [dl_role(7)] = &#039;1&#039; or [dl_role(8)] = &#039;1&#039; or [dl_role(9)] = &#039;1&#039;">
+		<Question><TranslatedText>Senior Care Home user signature</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dl_schudatesigned" Name="dl_schudatesigned" DataType="date" Length="999" redcap:Variable="dl_schudatesigned" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y" redcap:BranchingLogic="[dl_role(2)] = &#039;1&#039; or [dl_role(3)] = &#039;1&#039; or [dl_role(4)] = &#039;1&#039; or [dl_role(5)] = &#039;1&#039; or [dl_role(6)] = &#039;1&#039; or [dl_role(7)] = &#039;1&#039; or [dl_role(8)] = &#039;1&#039; or [dl_role(9)] = &#039;1&#039;">
+		<Question><TranslatedText>Senior Care Home user date signed</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>2021-05-01</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (2021-05-01 - 2023-12-31). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>2023-12-31</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (2021-05-01 - 2023-12-31). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="dl_pilabel" Name="dl_pilabel" DataType="text" Length="999" redcap:Variable="dl_pilabel" redcap:FieldType="descriptive" redcap:BranchingLogic="[dl_role(1)] = &#039;1&#039;" redcap:FieldAnnotation="@HIDDEN-SURVEY">
+		<Question><TranslatedText>For Principle Investigator (PI) to countersign Senior Care Home user delegation log entry</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dl_piname" Name="dl_piname" DataType="text" Length="999" redcap:Variable="dl_piname" redcap:FieldType="text" redcap:Identifier="y" redcap:BranchingLogic="[dl_role(1)] = &#039;1&#039;" redcap:FieldAnnotation="@HIDDEN-SURVEY">
+		<Question><TranslatedText>Name of PI</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dl_pisign" Name="dl_pisign" DataType="text" Length="999" redcap:Variable="dl_pisign" redcap:FieldType="file" redcap:TextValidationType="signature" redcap:Identifier="y" redcap:BranchingLogic="[dl_role(1)] = &#039;1&#039;" redcap:FieldAnnotation="@HIDDEN-SURVEY">
+		<Question><TranslatedText>Signature of PI</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dl_pisigndate" Name="dl_pisigndate" DataType="date" Length="999" redcap:Variable="dl_pisigndate" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:BranchingLogic="[dl_role(1)] = &#039;1&#039;" redcap:FieldAnnotation="@HIDDEN-SURVEY">
+		<Question><TranslatedText>PI date signed</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>2021-05-01</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (2021-05-01 - 2023-12-31). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>2023-12-31</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (2021-05-01 - 2023-12-31). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="delegation_log_add_complete" Name="delegation_log_add_complete" DataType="text" Length="1" redcap:Variable="delegation_log_add_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="delegation_log_add_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="dlr_centre_id" Name="dlr_centre_id" DataType="text" Length="999" redcap:Variable="dlr_centre_id" redcap:FieldType="text" redcap:RequiredField="y" redcap:FieldAnnotation="@HIDDEN-PDF @HIDDEN @CALCTEXT([centre_id])">
+		<Question><TranslatedText>Centre ID</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dlr_name" Name="dlr_name" DataType="text" Length="22" redcap:Variable="dlr_name" redcap:FieldType="sql" redcap:Identifier="y" redcap:RequiredField="y">
+		<Question><TranslatedText>Staff to remove from delegation log</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dlr_date" Name="dlr_date" DataType="date" Length="999" redcap:Variable="dlr_date" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Date removed from delegation log duties</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>2021-05-01</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (2021-05-01 - no limit). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="dlr_by" Name="dlr_by" DataType="text" Length="999" redcap:Variable="dlr_by" redcap:FieldType="text" redcap:Identifier="y" redcap:RequiredField="y">
+		<Question><TranslatedText>Notified by name</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dlr_sign" Name="dlr_sign" DataType="text" Length="999" redcap:Variable="dlr_sign" redcap:FieldType="file" redcap:TextValidationType="signature" redcap:Identifier="y" redcap:RequiredField="y">
+		<Question><TranslatedText>Notify by signed</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="dlr_signdate" Name="dlr_signdate" DataType="date" Length="999" redcap:Variable="dlr_signdate" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:RequiredField="y">
+		<Question><TranslatedText>Signed date</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>2021-05-01</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (2021-05-01 - no limit). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="delegation_log_remove_complete" Name="delegation_log_remove_complete" DataType="text" Length="1" redcap:Variable="delegation_log_remove_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="delegation_log_remove_complete.choices"/>
+	</ItemDef>
+	<CodeList OID="centre_country.choices" Name="centre_country" DataType="text" redcap:Variable="centre_country">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>England</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Northern Ireland</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Scotland</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>Wales</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_type.choices" Name="centre_type" DataType="text" redcap:Variable="centre_type">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Residential</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Nursing</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Mixed residential and nursing</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_prior_covid.choices" Name="centre_prior_covid" DataType="boolean" redcap:Variable="centre_prior_covid">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_treatments___0.choices" Name="centre_treatments___0" DataType="boolean" redcap:Variable="centre_treatments" redcap:CheckboxChoices="0, None|1, Oxygen|2, Dexamethasone|3, IV or subcutaneous fluids">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_treatments___1.choices" Name="centre_treatments___1" DataType="boolean" redcap:Variable="centre_treatments" redcap:CheckboxChoices="0, None|1, Oxygen|2, Dexamethasone|3, IV or subcutaneous fluids">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_treatments___2.choices" Name="centre_treatments___2" DataType="boolean" redcap:Variable="centre_treatments" redcap:CheckboxChoices="0, None|1, Oxygen|2, Dexamethasone|3, IV or subcutaneous fluids">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_treatments___3.choices" Name="centre_treatments___3" DataType="boolean" redcap:Variable="centre_treatments" redcap:CheckboxChoices="0, None|1, Oxygen|2, Dexamethasone|3, IV or subcutaneous fluids">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_owner.choices" Name="centre_owner" DataType="text" redcap:Variable="centre_owner">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Council</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Commercial</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Charity</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>Other {centre_owner_other}</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_learning_disability.choices" Name="centre_learning_disability" DataType="boolean" redcap:Variable="centre_learning_disability">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_cqc_rating.choices" Name="centre_cqc_rating" DataType="text" redcap:Variable="centre_cqc_rating">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Outstanding</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Good</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Requires improvement</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>Inadequate</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_vax_residents.choices" Name="centre_vax_residents" DataType="boolean" redcap:Variable="centre_vax_residents">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_vax_staff.choices" Name="centre_vax_staff" DataType="boolean" redcap:Variable="centre_vax_staff">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_can_randomise.choices" Name="centre_can_randomise" DataType="boolean" redcap:Variable="centre_can_randomise">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="centre_details_complete.choices" Name="centre_details_complete" DataType="text" redcap:Variable="centre_details_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="gp_active.choices" Name="gp_active" DataType="boolean" redcap:Variable="gp_active">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="gp_details_complete.choices" Name="gp_details_complete" DataType="text" redcap:Variable="gp_details_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="outbreak_source.choices" Name="outbreak_source" DataType="text" redcap:Variable="outbreak_source">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Resident(s)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Staff member(s)</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Resident(s) and Staff member(s)</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="outbreak_testtype.choices" Name="outbreak_testtype" DataType="text" redcap:Variable="outbreak_testtype">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Lateral flow</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>PCR</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="outbreak_oxygen.choices" Name="outbreak_oxygen" DataType="boolean" redcap:Variable="outbreak_oxygen">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="outbreak_complete.choices" Name="outbreak_complete" DataType="text" redcap:Variable="outbreak_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="outbreak_pcr_results.choices" Name="outbreak_pcr_results" DataType="text" redcap:Variable="outbreak_pcr_results">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Inconclusive</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="outbreak_confirmatory_pcr_complete.choices" Name="outbreak_confirmatory_pcr_complete" DataType="text" redcap:Variable="outbreak_confirmatory_pcr_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="list_of_pi_eligibility_complete.choices" Name="list_of_pi_eligibility_complete" DataType="text" redcap:Variable="list_of_pi_eligibility_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="rando.choices" Name="rando" DataType="text" redcap:Variable="rando">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Standard care</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>xxxxxxxxxxx</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>xxxxxxxxxxx</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="rando_bogus.choices" Name="rando_bogus" DataType="text" redcap:Variable="rando_bogus">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Standard care</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>xxxxxxxxxxx</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>xxxxxxxxxxx</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="randomisation_complete.choices" Name="randomisation_complete" DataType="text" redcap:Variable="randomisation_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="prescription_complete.choices" Name="prescription_complete" DataType="text" redcap:Variable="prescription_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dispatch_type.choices" Name="dispatch_type" DataType="text" redcap:Variable="dispatch_type">
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>xxxxxxxxxxx</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>xxxxxxxxxxx</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="pharmacy_dispatch_complete.choices" Name="pharmacy_dispatch_complete" DataType="text" redcap:Variable="pharmacy_dispatch_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="receipt_type.choices" Name="receipt_type" DataType="text" redcap:Variable="receipt_type">
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>xxxxxxxxxxx</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>xxxxxxxxxxx</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="receipt_of_drug_complete.choices" Name="receipt_of_drug_complete" DataType="text" redcap:Variable="receipt_of_drug_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="day_60_complete.choices" Name="day_60_complete" DataType="text" redcap:Variable="day_60_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_treat.choices" Name="tstatus_stop_treat" DataType="boolean" redcap:Variable="tstatus_stop_treat">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_treat_reason___1.choices" Name="tstatus_stop_treat_reason___1" DataType="boolean" redcap:Variable="tstatus_stop_treat_reason" redcap:CheckboxChoices="1, Care home no longer wanted to participate in trial | 2, Supply problems | 3, Care home concerns over safety | 4, No staff capacity to deliver trial treatment | 99, Other {tstatus_stop_treat_other}">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_treat_reason___2.choices" Name="tstatus_stop_treat_reason___2" DataType="boolean" redcap:Variable="tstatus_stop_treat_reason" redcap:CheckboxChoices="1, Care home no longer wanted to participate in trial | 2, Supply problems | 3, Care home concerns over safety | 4, No staff capacity to deliver trial treatment | 99, Other {tstatus_stop_treat_other}">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_treat_reason___3.choices" Name="tstatus_stop_treat_reason___3" DataType="boolean" redcap:Variable="tstatus_stop_treat_reason" redcap:CheckboxChoices="1, Care home no longer wanted to participate in trial | 2, Supply problems | 3, Care home concerns over safety | 4, No staff capacity to deliver trial treatment | 99, Other {tstatus_stop_treat_other}">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_treat_reason___4.choices" Name="tstatus_stop_treat_reason___4" DataType="boolean" redcap:Variable="tstatus_stop_treat_reason" redcap:CheckboxChoices="1, Care home no longer wanted to participate in trial | 2, Supply problems | 3, Care home concerns over safety | 4, No staff capacity to deliver trial treatment | 99, Other {tstatus_stop_treat_other}">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_treat_reason___99.choices" Name="tstatus_stop_treat_reason___99" DataType="boolean" redcap:Variable="tstatus_stop_treat_reason" redcap:CheckboxChoices="1, Care home no longer wanted to participate in trial | 2, Supply problems | 3, Care home concerns over safety | 4, No staff capacity to deliver trial treatment | 99, Other {tstatus_stop_treat_other}">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_data.choices" Name="tstatus_stop_data" DataType="boolean" redcap:Variable="tstatus_stop_data">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_data_reason___1.choices" Name="tstatus_stop_data_reason___1" DataType="boolean" redcap:Variable="tstatus_stop_data_reason" redcap:CheckboxChoices="1, Care home no longer wanted to participate in trial | 2, No staff capacity for data collection | 99, Other {tstatus_stop_data_other}">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_data_reason___2.choices" Name="tstatus_stop_data_reason___2" DataType="boolean" redcap:Variable="tstatus_stop_data_reason" redcap:CheckboxChoices="1, Care home no longer wanted to participate in trial | 2, No staff capacity for data collection | 99, Other {tstatus_stop_data_other}">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="tstatus_stop_data_reason___99.choices" Name="tstatus_stop_data_reason___99" DataType="boolean" redcap:Variable="tstatus_stop_data_reason" redcap:CheckboxChoices="1, Care home no longer wanted to participate in trial | 2, No staff capacity for data collection | 99, Other {tstatus_stop_data_other}">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="trial_status_complete.choices" Name="trial_status_complete" DataType="text" redcap:Variable="trial_status_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___1.choices" Name="dl_role___1" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___2.choices" Name="dl_role___2" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___3.choices" Name="dl_role___3" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___4.choices" Name="dl_role___4" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___5.choices" Name="dl_role___5" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___6.choices" Name="dl_role___6" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___7.choices" Name="dl_role___7" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___8.choices" Name="dl_role___8" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___9.choices" Name="dl_role___9" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="dl_role___10.choices" Name="dl_role___10" DataType="boolean" redcap:Variable="dl_role" redcap:CheckboxChoices="1, Care home manager (Senior care home user) | 2, Research Champion | 3, Resident capacity assessment | 4, Support research nurse with informed consent process | 5, eCRF (REDCap) data completion and query resolution | 6, Serious Adverse Event (SAE) reporting | 7, Maintenance of Investigator Site File | 8, Management/receipt of trial treatment | 9, Administering of trial treatment | 10, Disposal of unused trial treatment">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="delegation_log_add_complete.choices" Name="delegation_log_add_complete" DataType="text" redcap:Variable="delegation_log_add_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="delegation_log_remove_complete.choices" Name="delegation_log_remove_complete" DataType="text" redcap:Variable="delegation_log_remove_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+</MetaDataVersion>
+</Study>
+</ODM>
